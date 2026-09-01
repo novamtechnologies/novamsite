@@ -235,7 +235,7 @@
   .ask-list li::before { content: '→'; color: var(--accent); flex-shrink: 0; }
 
   /* TEAM */
-  .team-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-top: 48px; }
+  .team-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; margin-top: 48px; }
   .team-card { background: var(--surface); padding: 32px; }
   .team-role { font-family: var(--mono); font-size: 10px; color: var(--accent); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 10px; display: block; }
   .team-card .subtitle { font-size: 12px; color: var(--muted); margin-bottom: 14px; }
@@ -869,19 +869,27 @@
 <div id="team" class="full-bleed" style="background:var(--deep);">
   <div class="inner">
     <div class="section-tag" data-lang-key="team-tag">Team</div>
-    <h2 data-lang-key="team-h2">Materials science<br>meets embedded systems.</h2>
-    <p class="section-lead" data-lang-key="team-lead">The technical depth to build EVO-T sits across both founders. Neither can be separated from the platform they are designing.</p>
+    <h2 data-lang-key="team-h2">Built in Tokyo.<br>Shipped together.</h2>
+    <p class="section-lead" data-lang-key="team-lead">Three co-founders combining deep aerospace engineering, embedded AI systems, and global market development. Seven years of shared working history.</p>
     <div class="team-grid">
       <div class="team-card">
-        <span class="team-role">CEO · Principal Researcher</span>
+        <span class="team-role" data-lang-key="koray-role">CEO &amp; Co-Founder</span>
         <h3 data-lang-key="koray-h3">Ucuncu Koray</h3>
-        <p data-lang-key="koray-bio">MSc Materials &amp; Energy Science, Science Tokyo (former Tokyo Tech). Global R&D Strategy Lead, Teraoka Seiko (current, provides financial stability during build phase). 10+ years mechatronics, robotics, and AI implementation in industrial manufacturing. Leads EVO-T aerodynamic design, CFRP/Ti composite structures, CFD workflow, and IP strategy.</p>
+        <p data-lang-key="koray-bio">MSc Materials &amp; Energy Science, Science Tokyo (former Tokyo Tech). Global R&amp;D Lead, Teraoka Seiko (current). 6+ years engineering &amp; business development at DIGI/TERAOKA. 10+ years mechatronics, robotics, and AI. Leads EVO-T aerodynamic design, CFRP/Ti composite structures, CFD workflow, and IP strategy.</p>
       </div>
       <div class="team-card">
-        <span class="team-role">CTO · Co-researcher</span>
+        <span class="team-role" data-lang-key="gabriel-role">CTO &amp; Co-Founder</span>
         <h3 data-lang-key="gabriel-h3">Gabriel Peixoto</h3>
-        <p data-lang-key="gabriel-bio">MSc Computer Science (Computer Vision &amp; HCI). PhD candidate, AI Systems, Osaka University. 5 years AI robotics at Connected Robotics. FPGA, DSP, GPU embedded systems specialist. Leads all real-time flight software: NDI control law implementation, ArduPilot SIL/HIL architecture, GPS-denied navigation (Extended Kalman Filter design, optical flow, visual signature system), and Matek flight controller integration.</p>
+        <p data-lang-key="gabriel-bio">PhD candidate, Intelligent Systems, Osaka University. MSc Computer Science (CV &amp; HCI). FPGA, DSP, GPU embedded systems specialist. 5 years AI robotics at Connected Robotics. Co-workers with Koray at Connected Robotics. Leads all real-time flight software: NDI control law, ArduPilot SIL/HIL, GPS-denied navigation, and Matek flight controller integration.</p>
       </div>
+      <div class="team-card">
+        <span class="team-role" data-lang-key="cameron-role">CGO &amp; Co-Founder</span>
+        <h3 data-lang-key="cameron-h3">Cameron Clark</h3>
+        <p data-lang-key="cameron-bio">BA Arts Management + Japanese Studies, Ohio State University. Study abroad at International Christian University, Tokyo. Knows both co-founders personally for 7+ years. Leads brand strategy, investor relations, and international growth. Bridges Japanese defense and spaceport markets with global investor and partner networks.</p>
+      </div>
+    </div>
+    <div style="margin-top:2px;padding:18px 24px;background:var(--surface);border-left:2px solid var(--dim);font-size:12px;color:var(--muted);">
+      <span data-lang-key="team-recruit">Actively recruiting: Aerospace Engineer (propulsion / certification) · Using seed funds for this hire.</span>
     </div>
   </div>
 </div>
@@ -1022,8 +1030,8 @@
     'ask-h2':      ['Two asks.<br>One aligned interest.','2つのご提案。<br>1つの利益の一致。'],
     'ask-lead':    ['We are approaching leading deep tech VCs for NEDO DTSU co-submission partnership and bridge seed capital. Both asks serve the same goal: getting EVO-T from SIL to physical demonstration.','主要なディープテックVCに対しNEDO DTSU共同申請パートナーシップとブリッジシード資金についてご相談しています。両方の提案は同じ目標——EVO-TをSILから物理的実証へ——に向けたものです。'],
     'team-tag':    ['Team','チーム'],
-    'team-h2':     ['Materials science<br>meets embedded systems.','材料科学と<br>組込みシステムの融合。'],
-    'team-lead':   ['The technical depth to build EVO-T sits across both founders. Neither can be separated from the platform they are designing.','EVO-Tを構築するための技術的深度は両創業者にわたっている。どちらも設計しているプラットフォームから切り離すことはできない。'],
+    'team-h2':     ['Built in Tokyo.<br>Shipped together.','東京発。共に積み上げてきた。'],
+    'team-lead':   ['Three co-founders combining deep aerospace engineering, embedded AI systems, and global market development. Seven years of shared working history.','航空宇宙エンジニアリング・組込みAIシステム・グローバル市場開発を統合する3人の共同創業者。7年以上の共同業務経験。'],
     'pat-tag':     ['Intellectual Property','知的財産'],
     'pat-h2':      ['Three patents.<br>Three interlocking moats.','3件の特許。<br>3つの連動するモート。'],
     // TECH SECTION BODY
@@ -1098,9 +1106,16 @@
     'ask2-desc':   ['DTSU subsidy is paid in arrears. A 6–9 month cash flow gap exists between adoption and first payment. Bridge capital enables prototype execution, patent filings, and operations during the grant period.','DTSU補助金は後払い。採択から初回入金まで6〜9ヶ月のキャッシュフローギャップが生じる。ブリッジ資金により補助事業期間中のプロトタイプ実行・特許出願・事業運営が可能になる。'],
     // TEAM
     'koray-h3':    ['Ucuncu Koray','Ucuncu Koray（ウジュンジュ コレイ）'],
-    'koray-bio':   ['MSc Materials & Energy Science, Science Tokyo (former Tokyo Tech). Global R&D Lead, Teraoka Seiko (current). 10+ years mechatronics, robotics, and AI. Leads EVO-T aerodynamic design, CFRP/Ti composite structures, CFD workflow, and IP strategy.','東京科学大学（旧東工大）材料・エネルギー科学修士。株式会社寺岡精工グローバルR&Dリード（現職）。メカトロニクス・ロボティクス・AI実装10年以上。EVO-T空力設計・CFRP/Ti複合材構造・CFDワークフロー・IP戦略を主導。'],
+    'koray-role':  ['CEO & Co-Founder','CEO・共同創業者'],
+    'koray-bio':   ['MSc Materials & Energy Science, Science Tokyo (former Tokyo Tech). Global R&D Lead, Teraoka Seiko (current). 6+ years engineering & business development at DIGI/TERAOKA. 10+ years mechatronics, robotics, and AI. Leads EVO-T aerodynamic design, CFRP/Ti composite structures, CFD workflow, and IP strategy.','東京科学大学（旧東工大）材料・エネルギー科学修士。株式会社寺岡精工グローバルR&Dリード（現職）。DIGI/TERAOKAでのエンジニアリング・事業開発6年以上。メカトロニクス・ロボティクス・AI実装10年以上。EVO-T空力設計・CFRP/Ti複合材構造・CFDワークフロー・IP戦略を主導。'],
+    'gabriel-role':['CTO & Co-Founder','CTO・共同創業者'],
     'gabriel-h3':  ['Gabriel Peixoto','Gabriel Peixoto（ペイショト ガブリエル）'],
-    'gabriel-bio': ['MSc Computer Science (Computer Vision & HCI). PhD candidate, AI Systems, Osaka University. FPGA, DSP, GPU embedded systems specialist. 5 years AI robotics at Connected Robotics. Leads all real-time flight software: NDI control law implementation, ArduPilot SIL/HIL architecture, GPS-denied navigation, and Matek flight controller integration.','コンピュータサイエンス修士（CV・HCI）。大阪大学知能システム博士課程。FPGA・DSP・GPU組込みシステム専門家。Connected Roboticsでのロボティクス5年。NDI制御則実装・ArduPilot SIL/HIL・GPS非依存航法・Matek飛行コントローラー統合など全リアルタイム飛行ソフトウェアを主導。'],
+    'gabriel-bio': ['PhD candidate, Intelligent Systems, Osaka University. MSc Computer Science (CV & HCI). FPGA, DSP, GPU embedded systems specialist. 5 years AI robotics at Connected Robotics. Co-workers with Koray at Connected Robotics. Leads all real-time flight software: NDI control law, ArduPilot SIL/HIL, GPS-denied navigation, and Matek flight controller integration.','大阪大学知能システム博士課程。コンピュータサイエンス修士（CV・HCI）。FPGA・DSP・GPU組込みシステム専門家。Connected Roboticsでロボティクス5年（Korayとの共同勤務）。NDI制御則・ArduPilot SIL/HIL・GPS非依存航法・Matek統合など全リアルタイム飛行ソフトウェアを主導。'],
+    'cameron-role':['CGO & Co-Founder','CGO・共同創業者'],
+    'cameron-h3':  ['Cameron Clark','Cameron Clark（クラーク キャメロン）'],
+    'cameron-bio': ['BA Arts Management + Japanese Studies, Ohio State University. Study abroad at International Christian University, Tokyo. Knows both co-founders personally for 7+ years. Leads brand strategy, investor relations, and international growth. Bridges Japanese defense and spaceport markets with global investor and partner networks.','オハイオ州立大学 芸術経営＋日本語学士。国際基督教大学（東京）留学。両共同創業者と7年以上の個人的な関係。ブランド戦略・投資家関係・国際成長を主導。日本の防衛・宇宙港市場とグローバル投資家・パートナーネットワークを橋渡しする。'],
+    'team-recruit':['Actively recruiting: Aerospace Engineer (propulsion / certification) · Using seed funds for this hire.','採用中：航空宇宙エンジニア（推進・認証）· シード資金で採用予定。'],
+
 
   };
 
