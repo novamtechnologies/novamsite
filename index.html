@@ -454,15 +454,15 @@
 <section id="technology">
   <div class="section-tag" data-lang-key="tech-tag">Core IP</div>
   <h2 data-lang-key="tech-h2">Three technologies.<br>One integrated moat.</h2>
-  <p class="section-lead">
+  <p data-lang-key="tech-body" class="section-lead">
     Each technology is co-designed with the others. The NDI control law is tuned to this specific airframe. The navigation system feeds into the same EKF that underpins NDI. Neither works at full capability without the other.
   </p>
 
   <div class="tech-grid">
     <div class="tech-card">
       <div style="margin-bottom:16px;"><span class="badge badge-proven" style="margin-bottom:8px;display:inline-block;">★ CFD Validated</span></div>
-      <h3>NDI Transition Control</h3>
-      <p style="margin-top:8px;">Non-linear Dynamic Inversion managing EDF-to-jet transition in a statically unstable BWB airframe. The CFD-confirmed instability (Cm_α = +0.415/rad) is the engineering challenge nobody else is solving.</p>
+      <h3 data-lang-key="ndi-h3">NDI Transition Control</h3>
+      <p data-lang-key="ndi-desc" style="margin-top:8px;">Non-linear Dynamic Inversion managing EDF-to-jet transition in a statically unstable BWB airframe. The CFD-confirmed instability (Cm_α = +0.415/rad) is the engineering challenge nobody else is solving.</p>
       <div class="tech-metric">
         <div class="metric-row">
           <span class="metric-label">Cm_α (CFD OpenFOAM)</span>
@@ -489,8 +489,8 @@
 
     <div class="tech-card">
       <div style="margin-bottom:16px;"><span class="badge badge-target" style="margin-bottom:8px;display:inline-block;">◎ DTSU Development Target</span></div>
-      <h3>GPS-Denied Navigation</h3>
-      <p style="margin-top:8px;">Three-layer sensor fusion via Extended Kalman Filter. Natural surface feature signatures + semantic landmark detection + laser depth array. Zero pre-installed infrastructure required.</p>
+      <h3 data-lang-key="nav-h3">GPS-Denied Navigation</h3>
+      <p data-lang-key="nav-desc" style="margin-top:8px;">Three-layer sensor fusion via Extended Kalman Filter. Natural surface feature signatures + semantic landmark detection + laser depth array. Zero pre-installed infrastructure required.</p>
       <div class="tech-metric">
         <div class="metric-row">
           <span class="metric-label">Laser altitude (VL53L1X)</span>
@@ -517,8 +517,8 @@
 
     <div class="tech-card">
       <div style="margin-bottom:16px;"><span class="badge badge-target" style="margin-bottom:8px;display:inline-block;">◎ In Preparation</span></div>
-      <h3>Propulsion Architecture</h3>
-      <p style="margin-top:8px;">Phase 1: AMT Nike microturbojet + 6×EDF hybrid. Phase 3 (research): Al-B solid composite fuel rod — patent application in preparation. Staged de-risking separates research risk from execution risk.</p>
+      <h3 data-lang-key="prop-h3">Propulsion Architecture</h3>
+      <p data-lang-key="prop-phase1-desc" style="margin-top:8px;">Phase 1: AMT Nike microturbojet + 6×EDF hybrid. Phase 3 (research): Al-B solid composite fuel rod — patent application in preparation. Staged de-risking separates research risk from execution risk.</p>
       <div class="tech-metric">
         <div class="metric-row">
           <span class="metric-label">Phase 1 — AMT Nike</span>
@@ -559,8 +559,8 @@
     <div class="prop-grid">
       <div class="prop-now">
         <span class="badge badge-proven" style="margin-bottom:14px;display:inline-block;">★ Current Program — EVO-T v1</span>
-        <h3>AMT Nike Microturbojet + 6× EDF</h3>
-        <p>Proven off-the-shelf components. AMT Nike is a certified microturbojet with known performance characteristics. Six EDF units provide vertical lift and transition assist. NDI software manages the handover between both thrust sources.</p>
+        <h3 data-lang-key="prop-now-h3">AMT Nike Microturbojet + 6× EDF</h3>
+        <p data-lang-key="prop-now-desc">Proven off-the-shelf components. AMT Nike is a certified microturbojet with known performance characteristics. Six EDF units provide vertical lift and transition assist. NDI software manages the handover between both thrust sources.</p>
         <div class="prop-specs">
           <div class="spec-row"><span class="spec-key">Turbojet thrust</span><span class="spec-val">200 N (AMT Nike, proven)</span></div>
           <div class="spec-row"><span class="spec-key">EDF thrust/weight</span><span class="spec-val">1.80–2.22 (design)</span></div>
@@ -572,8 +572,8 @@
 
       <div class="prop-future">
         <span class="badge badge-roadmap" style="margin-bottom:14px;display:inline-block;">○ Phase 3 Research — EVO-T v3+</span>
-        <h3>Al-B Solid Composite Fuel Rod</h3>
-        <p>Details available upon request under NDA.</p>
+        <h3 data-lang-key="alb-h3">Al-B Solid Composite Fuel Rod</h3>
+        <p data-lang-key="alb-conf">Details available upon request under NDA.</p>
         <div style="margin-top:20px;padding:20px 24px;border:1px solid rgba(255,179,71,0.25);background:rgba(255,179,71,0.04);">
           <p style="font-family:var(--mono);font-size:11px;color:var(--amber);letter-spacing:0.1em;text-transform:uppercase;margin:0;">
             ○ Confidential — available upon request
@@ -597,29 +597,29 @@
   <p class="section-lead" data-lang-key="moat-lead">The three technologies are co-designed. No single component functions at full capability without the other two. The integration is the invention.</p>
   <div class="moat-grid">
     <div class="moat-card">
-      <h3>Copy the BWB airframe</h3>
-      <p>Without the NDI control law specifically tuned to Cm_α = +0.415/rad on this airframe geometry, the aircraft is aerodynamically uncontrollable.</p>
-      <div class="verdict">Result → unflyable</div>
+      <h3 data-lang-key="moat1-h3">Copy the BWB airframe</h3>
+      <p data-lang-key="moat1-desc">Without the NDI control law specifically tuned to Cm_α = +0.415/rad on this airframe geometry, the aircraft is aerodynamically uncontrollable.</p>
+      <div class="verdict" data-lang-key="moat1-v">Result → unflyable</div>
     </div>
     <div class="moat-card">
-      <h3>Copy the NDI software</h3>
-      <p>Tuned to specific aerodynamic coefficients validated by OpenFOAM CFD on EVO-T's geometry. Zero transferability to a different airframe without repeating the full design loop.</p>
-      <div class="verdict">Result → non-functional</div>
+      <h3 data-lang-key="moat2-h3">Copy the NDI software</h3>
+      <p data-lang-key="moat2-desc">Tuned to specific aerodynamic coefficients validated by OpenFOAM CFD on EVO-T's geometry. Zero transferability to a different airframe without repeating the full design loop.</p>
+      <div class="verdict" data-lang-key="moat2-v">Result → non-functional</div>
     </div>
     <div class="moat-card">
-      <h3>Build GPS-denied navigation</h3>
-      <p>Without integration as a position measurement update in the NDI Extended Kalman Filter, it remains an instrument display — not a flight control input.</p>
-      <div class="verdict">Result → fragmented</div>
+      <h3 data-lang-key="moat3-h3">Build GPS-denied navigation</h3>
+      <p data-lang-key="moat3-desc">Without integration as a position measurement update in the NDI Extended Kalman Filter, it remains an instrument display — not a flight control input.</p>
+      <div class="verdict" data-lang-key="moat3-v">Result → fragmented</div>
     </div>
     <div class="moat-card">
-      <h3>File a competing propulsion patent</h3>
-      <p>Patent application NTK-2026-PROP-005 (in preparation) covers the specific tribological feed mechanism, dual-axis throttle equation, voice coil actuation, and NDI integration claims.</p>
-      <div class="verdict">Result → blocked</div>
+      <h3 data-lang-key="moat4-h3">File a competing propulsion patent</h3>
+      <p data-lang-key="moat4-desc">Patent application NTK-2026-PROP-005 (in preparation) covers the specific tribological feed mechanism, dual-axis throttle equation, voice coil actuation, and NDI integration claims.</p>
+      <div class="verdict" data-lang-key="moat4-v">Result → blocked</div>
     </div>
     <div class="moat-card full">
-      <h3>Integrate all three from scratch</h3>
-      <p>Requires the same iterative loop of CFD aerodynamic modelling → NDI control design → sensor fusion architecture → physical HIL testing that Tokyo Dynamics has been executing since 2021. The aerodynamic model, control law, and sensor fusion architecture cannot be purchased or downloaded.</p>
-      <div class="verdict">Estimated replication time: 10–15 years</div>
+      <h3 data-lang-key="moat5-h3">Integrate all three from scratch</h3>
+      <p data-lang-key="moat5-desc">Requires the same iterative loop of CFD aerodynamic modelling → NDI control design → sensor fusion architecture → physical HIL testing that Tokyo Dynamics has been executing since 2021. The aerodynamic model, control law, and sensor fusion architecture cannot be purchased or downloaded.</p>
+      <div class="verdict" data-lang-key="moat5-v">Estimated replication time: 10–15 years</div>
     </div>
   </div>
 </section>
@@ -635,24 +635,24 @@
     <div class="market-grid">
       <div class="market-card">
         <span class="market-tag">Initial Market · Defense</span>
-        <h3>Japan MOD / ATLA</h3>
-        <p>6,800-island defense perimeter. No sovereign high-speed autonomous VTOL platform for GPS-denied contested environments. ATLA submission already under ministry review.</p>
+        <h3 data-lang-key="market1-h3">Japan MOD / ATLA</h3>
+        <p data-lang-key="market1-desc">6,800-island defense perimeter. No sovereign high-speed autonomous VTOL platform for GPS-denied contested environments. ATLA submission already under ministry review.</p>
         <div class="market-size">¥460B</div>
-        <div class="market-size-label">Estimated program size</div>
+        <div class="market-size-label"><span data-lang-key="mkt1-size-lbl">Estimated program size</span></div>
       </div>
       <div class="market-card">
         <span class="market-tag">Adjacent · Space Logistics</span>
-        <h3>JAXA / Spaceport Ops</h3>
-        <p>Inter-facility logistics between Tanegashima, Hokkaido, and support sites. High-speed autonomous transport for critical components where current helicopters are too slow.</p>
+        <h3 data-lang-key="market2-h3">JAXA / Spaceport Ops</h3>
+        <p data-lang-key="market2-desc">Inter-facility logistics between Tanegashima, Hokkaido, and support sites. High-speed autonomous transport for critical components where current helicopters are too slow.</p>
         <div class="market-size">Growing</div>
-        <div class="market-size-label">Space launch support</div>
+        <div class="market-size-label"><span data-lang-key="mkt2-size-lbl">Space launch support</span></div>
       </div>
       <div class="market-card">
         <span class="market-tag">Long-term Vision · 2035+</span>
-        <h3>Personal Air Mobility</h3>
-        <p>Every technical barrier between today and affordable personal air mobility — autonomous control, GPS-denied nav, energy density, runway-free landing — is what EVO-T proves first for defense.</p>
+        <h3 data-lang-key="market3-h3">Personal Air Mobility</h3>
+        <p data-lang-key="market3-desc">Every technical barrier between today and affordable personal air mobility — autonomous control, GPS-denied nav, energy density, runway-free landing — is what EVO-T proves first for defense.</p>
         <div class="market-size">$1T+</div>
-        <div class="market-size-label">Long-term addressable</div>
+        <div class="market-size-label"><span data-lang-key="mkt3-size-lbl">Long-term addressable</span></div>
       </div>
     </div>
   </div>
@@ -670,8 +670,8 @@
       <div class="tl-year">2021 Jan</div>
       <div class="tl-dot active"></div>
       <div class="tl-content">
-        <h3>Foundation — Self-funded</h3>
-        <p>BWB concept design. OpenFOAM CFD complete (all configurations). NDI SIL development underway. ATLA formal submission. Patent applications in preparation. Company established.</p>
+        <h3 data-lang-key="road1-h3">Foundation — Self-funded</h3>
+        <p data-lang-key="road1-desc">BWB concept design. OpenFOAM CFD complete (all configurations). NDI SIL development underway. ATLA formal submission. Patent applications in preparation. Company established.</p>
         <span class="badge badge-proven">★ In Progress / Complete</span>
       </div>
     </div>
@@ -679,8 +679,8 @@
       <div class="tl-year">2026 Jan – 2027 mid</div>
       <div class="tl-dot active"></div>
       <div class="tl-content">
-        <h3>DTSU STS Phase — 70 cm PoC</h3>
-        <p>NDI HIL verification on Matek flight controller. GPS-denied autonomous landing demonstration. Physical proof of core NDI + navigation claims. TRL 3 → 5. ATLA technical proposal engagement.</p>
+        <h3 data-lang-key="road2-h3">DTSU STS Phase — 70 cm PoC</h3>
+        <p data-lang-key="road2-desc">NDI HIL verification on Matek flight controller. GPS-denied autonomous landing demonstration. Physical proof of core NDI + navigation claims. TRL 3 → 5. ATLA technical proposal engagement.</p>
         <span class="badge badge-target">◎ DTSU Application Ready</span>
       </div>
     </div>
@@ -688,8 +688,8 @@
       <div class="tl-year">2027 mid – 2028</div>
       <div class="tl-dot"></div>
       <div class="tl-content">
-        <h3>Series A — Alpha-1 (1/3 scale)</h3>
-        <p>Alpha-1 free flight with AMT Nike + EDF hybrid. ATLA formal procurement engagement. Spaceport LOI. Koray full-time. Team expansion to 10–15.</p>
+        <h3 data-lang-key="road3-h3">Series A — Alpha-1 (1/3 scale)</h3>
+        <p data-lang-key="road3-desc">Alpha-1 free flight with AMT Nike + EDF hybrid. ATLA formal procurement engagement. Spaceport LOI. Koray full-time. Team expansion to 10–15.</p>
         <span class="badge badge-target">◎ Target: ¥300–500M — within 1 year of PoC</span>
       </div>
     </div>
@@ -697,8 +697,8 @@
       <div class="tl-year">2028 – 2031</div>
       <div class="tl-dot future"></div>
       <div class="tl-content">
-        <h3>Full-scale Platform (1,650 kg MTOW)</h3>
-        <p>Full-scale vehicle with hydrogen-compatible propulsion upgrade. JCAB/MoD certification track. Defense procurement contracts. Commercial spaceport operations begin.</p>
+        <h3 data-lang-key="road4-h3">Full-scale Platform (1,650 kg MTOW)</h3>
+        <p data-lang-key="road4-desc">Full-scale vehicle with hydrogen-compatible propulsion upgrade. JCAB/MoD certification track. Defense procurement contracts. Commercial spaceport operations begin.</p>
         <span class="badge badge-roadmap">○ Series B / IPO</span>
       </div>
     </div>
@@ -706,8 +706,8 @@
       <div class="tl-year">2030+</div>
       <div class="tl-dot future"></div>
       <div class="tl-content">
-        <h3>Al-B Solid Metal Propulsion Integration</h3>
-        <p>Friable rod propulsion replaces turbojet if theoretical energy density advantage is experimentally validated. Pathway to personal air mobility opens if economics hold.</p>
+        <h3 data-lang-key="road5-h3">Al-B Solid Metal Propulsion Integration</h3>
+        <p data-lang-key="road5-desc">Friable rod propulsion replaces turbojet if theoretical energy density advantage is experimentally validated. Pathway to personal air mobility opens if economics hold.</p>
         <span class="badge badge-roadmap">○ Research Track — Not current program</span>
       </div>
     </div>
@@ -719,15 +719,15 @@
 <!-- TRACTION -->
 <div id="traction" class="full-bleed" style="background:var(--deep);">
   <div class="inner">
-    <div class="section-tag">Proof Points</div>
-    <h2>What exists today.</h2>
-    <p class="section-lead">We distinguish between what is proven, what is in progress, and what is a design target. Every claim here is backed by data or formal submission.</p>
+    <div class="section-tag" data-lang-key="tract-tag">Proof Points</div>
+    <h2 data-lang-key="tract-h2">What exists today.</h2>
+    <p data-lang-key="tract-lead" class="section-lead">We distinguish between what is proven, what is in progress, and what is a design target. Every claim here is backed by data or formal submission.</p>
     <div class="traction-grid">
       <div class="traction-item">
         <div class="traction-icon">📐</div>
         <div class="traction-text">
-          <h3>CFD Analysis Complete</h3>
-          <p>OpenFOAM v2406. Full four-configuration analysis. Cd=0.065, Cl=0.150, CL_α=1.934/rad, Cm_α=+0.415/rad. Static instability confirmed — NDI requirement validated.</p>
+          <h3 data-lang-key="tract1-h3">CFD Analysis Complete</h3>
+          <p data-lang-key="tract1-desc">OpenFOAM v2406. Full four-configuration analysis. Cd=0.065, Cl=0.150, CL_α=1.934/rad, Cm_α=+0.415/rad. Static instability confirmed — NDI requirement validated.</p>
           <span class="badge badge-proven" style="margin-top:8px;display:inline-block;">★ Data Available</span>
         </div>
       </div>
@@ -735,31 +735,31 @@
         <div class="traction-icon">🛡</div>
         <div class="traction-text">
           <h3>Japan MOD ATLA Submission</h3>
-          <p>Formal submission to Japan Defense Acquisition, Technology and Logistics Agency. Under ministry review as of 2026.</p>
+          <p data-lang-key="tract2-desc">Formal submission to Japan Defense Acquisition, Technology and Logistics Agency. Under ministry review as of 2026.</p>
           <span class="badge badge-proven" style="margin-top:8px;display:inline-block;">★ Submitted</span>
         </div>
       </div>
       <div class="traction-item">
         <div class="traction-icon">⚡</div>
         <div class="traction-text">
-          <h3>Patent NTK-2026-PROP-005</h3>
-          <p>Friable rod solid metal composite propulsion. Tribological feed mechanism, dual-axis throttle, multi-mode operation. JPO application in progress July 2026.</p>
+          <h3 data-lang-key="tract3-h3">Patent NTK-2026-PROP-005</h3>
+          <p data-lang-key="tract3-desc">Friable rod solid metal composite propulsion. Tribological feed mechanism, dual-axis throttle, multi-mode operation. JPO application in progress July 2026.</p>
           <span class="badge badge-target" style="margin-top:8px;display:inline-block;">◎ In Preparation</span>
         </div>
       </div>
       <div class="traction-item">
         <div class="traction-icon">💻</div>
         <div class="traction-text">
-          <h3>NDI SIL Environment Running</h3>
-          <p>ArduPilot SITL + JSBSim simulation. Python NDI control law implemented. 3-mode operation (hover/fault/transition) running in simulation. Hardware integration next.</p>
+          <h3 data-lang-key="tract4-h3">NDI SIL Environment Running</h3>
+          <p data-lang-key="tract4-desc">ArduPilot SITL + JSBSim simulation. Python NDI control law implemented. 3-mode operation (hover/fault/transition) running in simulation. Hardware integration next.</p>
           <span class="badge badge-target" style="margin-top:8px;display:inline-block;">◎ SIL Complete, HIL Next</span>
         </div>
       </div>
       <div class="traction-item">
         <div class="traction-icon">🔧</div>
         <div class="traction-text">
-          <h3>70 cm PoC Prototype — In Build</h3>
-          <p>6× EDF components ordered. Matek flight controller selected. 3D design in progress. Physical demonstrations of NDI, GPS-denied landing, and fault recovery targeted August 2026.</p>
+          <h3 data-lang-key="tract5-h3">70 cm PoC Prototype — In Build</h3>
+          <p data-lang-key="tract5-desc">6× EDF components ordered. Matek flight controller selected. 3D design in progress. Physical demonstrations of NDI, GPS-denied landing, and fault recovery targeted August 2026.</p>
           <span class="badge badge-target" style="margin-top:8px;display:inline-block;">◎ Building Now</span>
         </div>
       </div>
@@ -838,8 +838,8 @@
   <div class="ask-grid">
     <div class="ask-card primary">
       <div class="ask-num">01</div>
-      <h3>NEDO DTSU Round 10 Co-submission</h3>
-      <p>DTSU requires a VC/CVC investment intention letter covering ≥1/3 of eligible costs. Subsidy up to ¥500M at 2/3 subsidy rate over 24 months. PoC prototype → TRL 5 is the deliverable.</p>
+      <h3 data-lang-key="ask1-h3">NEDO DTSU Round 10 Co-submission</h3>
+      <p data-lang-key="ask1-desc">DTSU requires a VC/CVC investment intention letter covering ≥1/3 of eligible costs. Subsidy up to ¥500M at 2/3 subsidy rate over 24 months. PoC prototype → TRL 5 is the deliverable.</p>
       <ul class="ask-list">
         <li>Investment intention letter to NEDO</li>
         <li>STSフェーズ — up to ¥500M subsidy</li>
@@ -850,8 +850,8 @@
     </div>
     <div class="ask-card primary">
       <div class="ask-num">02</div>
-      <h3>Bridge Seed — ¥3–5M (SAFE / Convertible Note)</h3>
-      <p>DTSU subsidy is paid in arrears. A 6–9 month cash flow gap exists between adoption and first payment. Bridge capital enables prototype execution, patent filings, and operations that make the DTSU application defensible.</p>
+      <h3 data-lang-key="ask2-h3">Bridge Seed — ¥3–5M (SAFE / Convertible Note)</h3>
+      <p data-lang-key="ask2-desc">DTSU subsidy is paid in arrears. A 6–9 month cash flow gap exists between adoption and first payment. Bridge capital enables prototype execution, patent filings, and operations that make the DTSU application defensible.</p>
       <ul class="ask-list">
         <li>¥1.2M — PoC prototype and demo testing</li>
         <li>¥500K — 3 patent filings (NDI, NAV, PROP)</li>
@@ -874,13 +874,13 @@
     <div class="team-grid">
       <div class="team-card">
         <span class="team-role">CEO · Principal Researcher</span>
-        <h3>Ucuncu Koray</h3>
-        <p>MSc Materials &amp; Energy Science, Science Tokyo (former Tokyo Tech). Global R&D Strategy Lead, Teraoka Seiko (current, provides financial stability during build phase). 10+ years mechatronics, robotics, and AI implementation in industrial manufacturing. Leads EVO-T aerodynamic design, CFRP/Ti composite structures, CFD workflow, and IP strategy.</p>
+        <h3 data-lang-key="koray-h3">Ucuncu Koray</h3>
+        <p data-lang-key="koray-bio">MSc Materials &amp; Energy Science, Science Tokyo (former Tokyo Tech). Global R&D Strategy Lead, Teraoka Seiko (current, provides financial stability during build phase). 10+ years mechatronics, robotics, and AI implementation in industrial manufacturing. Leads EVO-T aerodynamic design, CFRP/Ti composite structures, CFD workflow, and IP strategy.</p>
       </div>
       <div class="team-card">
         <span class="team-role">CTO · Co-researcher</span>
-        <h3>Gabriel Peixoto</h3>
-        <p>MSc Computer Science (Computer Vision &amp; HCI). PhD candidate, AI Systems, Osaka University. 5 years AI robotics at Connected Robotics. FPGA, DSP, GPU embedded systems specialist. Leads all real-time flight software: NDI control law implementation, ArduPilot SIL/HIL architecture, GPS-denied navigation (Extended Kalman Filter design, optical flow, visual signature system), and Matek flight controller integration.</p>
+        <h3 data-lang-key="gabriel-h3">Gabriel Peixoto</h3>
+        <p data-lang-key="gabriel-bio">MSc Computer Science (Computer Vision &amp; HCI). PhD candidate, AI Systems, Osaka University. 5 years AI robotics at Connected Robotics. FPGA, DSP, GPU embedded systems specialist. Leads all real-time flight software: NDI control law implementation, ArduPilot SIL/HIL architecture, GPS-denied navigation (Extended Kalman Filter design, optical flow, visual signature system), and Matek flight controller integration.</p>
       </div>
     </div>
   </div>
@@ -1025,7 +1025,83 @@
     'team-h2':     ['Materials science<br>meets embedded systems.','材料科学と<br>組込みシステムの融合。'],
     'team-lead':   ['The technical depth to build EVO-T sits across both founders. Neither can be separated from the platform they are designing.','EVO-Tを構築するための技術的深度は両創業者にわたっている。どちらも設計しているプラットフォームから切り離すことはできない。'],
     'pat-tag':     ['Intellectual Property','知的財産'],
-    'pat-h2':      ['Three patents.<br>Three interlocking moats.','3件の特許。<br>3つの連動するモート。']
+    'pat-h2':      ['Three patents.<br>Three interlocking moats.','3件の特許。<br>3つの連動するモート。'],
+    // TECH SECTION BODY
+    'tech-body':   ['Each technology is co-designed with the others. The NDI control law is tuned to this specific airframe. The navigation system feeds into the same EKF that underpins NDI. Neither works at full capability without the other.','各技術は相互に共同設計されている。NDI制御則はこの特定の機体に合わせてチューニングされている。航法システムはNDIを支える同じEKFに入力される。どれか一つだけでは完全な能力を発揮できない。'],
+    // TECH CARD DESCRIPTIONS
+    'ndi-h3':      ['NDI Transition Control','NDI遷移制御'],
+    'ndi-desc':    ['Non-linear Dynamic Inversion managing EDF-to-jet transition in a statically unstable BWB airframe — a control problem that has no prior solution exists.','静的不安定BWB機体におけるEDF→ジェット遷移を管理する非線形動的逆制御。世界に先行解決例のない制御問題。'],
+    'nav-h3':      ['GPS-Denied Navigation','GPS非依存自律航法'],
+    'nav-desc':    ['Three-layer sensor fusion via Extended Kalman Filter. Natural surface feature signatures + semantic landmark detection + laser depth array. Zero pre-installed infrastructure required.','拡張カルマンフィルタによる3層センサーフュージョン。自然地物特徴量署名＋意味的ランドマーク認識＋レーザー深度アレイ。事前インフラ設置ゼロ。'],
+    'prop-h3':     ['Propulsion Architecture','推進アーキテクチャ'],
+    'prop-phase1-desc': ['Phase 1: AMT Nike microturbojet + 6×EDF hybrid. Phase 3 (research): Al-B solid composite fuel rod — patent application in preparation. Staged de-risking separates research risk from execution risk.','フェーズ1：AMT Nikeマイクロターボジェット＋6基EDF。フェーズ3（研究）：Al-B固体複合燃料ロッド——特許出願準備中。段階的リスク分散により研究リスクと実行リスクを分離。'],
+    // PROPULSION NOW/FUTURE
+    'prop-now-h3': ['AMT Nike Microturbojet + 6× EDF','AMT Nikeマイクロターボジェット＋6基EDF'],
+    'prop-now-desc':['Proven off-the-shelf components. AMT Nike is a certified microturbojet with known performance characteristics. Six EDF units provide vertical lift and transition assist. NDI software manages the handover between both thrust sources.','実証済みの既製コンポーネント。AMT Nikeは性能特性が確立された認証済みマイクロターボジェット。6基のEDFが垂直揚力と遷移支援を担う。NDIソフトウェアが両推力源間の切り替えを管理する。'],
+    'alb-h3':      ['Al-B Solid Composite Fuel Rod','Al-B固体複合燃料ロッド'],
+    'alb-conf':    ['Details available upon request under NDA.','詳細はNDA締結後にご提供します。'],
+    // MOAT
+    'moat1-h3':    ['Copy the BWB airframe','BWB機体形状をコピーする'],
+    'moat1-desc':  ['Without the NDI control law specifically tuned to Cm_α = +0.415/rad on this airframe geometry, the aircraft is aerodynamically uncontrollable.','この機体形状のCm_α=+0.415/radに特化してチューニングされたNDI制御則なしでは、機体は空力的に制御不能になる。'],
+    'moat1-v':     ['Result → unflyable','結果 → 飛行不能'],
+    'moat2-h3':    ['Copy the NDI software','NDIソフトウェアをコピーする'],
+    'moat2-desc':  ['Tuned to specific aerodynamic coefficients validated by OpenFOAM CFD on EVO-T geometry. Zero transferability to another airframe without repeating the full design loop.','EVO-T形状のOpenFOAM CFDで検証された特定空力係数にチューニング済み。フル設計ループを繰り返さなければ別機体への転用はゼロ。'],
+    'moat2-v':     ['Result → non-functional','結果 → 機能不全'],
+    'moat3-h3':    ['Build GPS-denied navigation','GPS非依存航法を開発する'],
+    'moat3-desc':  ['Without integration as a position measurement update in the NDI Extended Kalman Filter, it stays an instrument — not autonomous flight control.','NDI拡張カルマンフィルタへの位置計測更新として統合されなければ、計器表示に留まる——自律飛行制御にはならない。'],
+    'moat3-v':     ['Result → fragmented','結果 → 断片的'],
+    'moat4-h3':    ['File a competing propulsion patent','推進特許に対抗する'],
+    'moat4-desc':  ['Patent application NTK-2026-PROP-005 (in preparation) covers the specific tribological feed mechanism, dual-axis throttle equation, voice coil actuation, and NDI integration claims.','特許出願NTK-2026-PROP-005（準備中）は、特定の摩擦脆性供給機構、2軸スロットル方程式、ボイスコイル作動、NDI統合クレームをカバーする。'],
+    'moat4-v':     ['Result → blocked','結果 → ブロック'],
+    'moat5-h3':    ['Integrate all three from scratch','3技術すべてをゼロから統合する'],
+    'moat5-desc':  ['Requires the same iterative loop of CFD aerodynamic modelling → NDI control design → sensor fusion architecture → HIL testing we have been executing since 2021.','2021年から実行してきたCFD空力モデリング→NDI制御設計→センサーフュージョン→HIL検証の同一反復ループが必要。'],
+    'moat5-v':     ['Estimated replication time: 10–15 years','推定複製期間：10〜15年'],
+    // MARKET
+    'market1-h3':  ['Japan MOD / ATLA','防衛省ATLA'],
+    'market1-desc':['6,800-island defense perimeter. No sovereign high-speed autonomous VTOL platform for GPS-denied ops. ATLA submission under review.','6,800島の防衛ペリメーター。GPS遮断環境での高速自律VTOLは日本国産に存在しない。ATLA提出済み・審査中。'],
+    'mkt1-size-lbl':['Estimated program size','推定調達プログラム規模'],
+    'market2-h3':  ['JAXA / Spaceport Ops','JAXA・宇宙港'],
+    'market2-desc':['Inter-facility logistics between Tanegashima, Hokkaido, and support sites. High-speed autonomous transport for critical components where current helicopters are too slow.','種子島・大樹町・支援施設間の高速物資輸送。現行ヘリでは速度不足な重要部品の自律輸送。'],
+    'mkt2-size-lbl':['Space launch support','宇宙輸送支援'],
+    'market3-h3':  ['Personal Air Mobility','個人航空移動'],
+    'market3-desc':['Every technical barrier between today and affordable personal air mobility — autonomous control, GPS-denied nav, energy density, runway-free landing — is what EVO-T proves first for defense.','EVO-Tが防衛向けに証明するすべての技術が個人航空移動への技術的障壁と同一。自律制御・GPS非依存航法・エネルギー密度・滑走路不要着陸。'],
+    'mkt3-size-lbl':['Long-term addressable','長期アドレス可能市場'],
+    // ROADMAP
+    'road1-h3':    ['Foundation — Self-funded','基盤構築 — 自己資金'],
+    'road1-desc':  ['BWB concept design. OpenFOAM CFD complete (all configurations). NDI SIL development underway. ATLA formal submission. Patent applications in preparation. Company established.','BWB概念設計完了。OpenFOAM CFD完了（全形態）。NDI SIL開発中。ATLA正式提出。特許出願準備中。会社設立済み。'],
+    'road2-h3':    ['DTSU STS Phase — 70 cm PoC','DTSUフェーズ — 70cm PoC'],
+    'road2-desc':  ['NDI HIL verification on Matek flight controller. GPS-denied autonomous landing demonstration. Physical proof of core NDI + navigation claims. TRL 3 → 5. ATLA technical proposal engagement.','Matek飛行コントローラーでのNDI HIL検証。GPS非依存自律着陸実証。NDI・航法コア技術の物理的証明。TRL 3→5。ATLA技術提案参画。'],
+    'road3-h3':    ['Series A — Alpha-1 (1/3 scale)','Series A — Alpha-1（1/3スケール）'],
+    'road3-desc':  ['Alpha-1 free flight with AMT Nike + EDF hybrid. ATLA formal procurement engagement. Spaceport LOI. Koray full-time. Team expansion to 10–15.','AMT Nike＋EDFハイブリッドでのAlpha-1自由飛行。ATLA正式調達参画。宇宙港LOI。Korayフルタイム移行。チーム10〜15名に拡大。'],
+    'road4-h3':    ['Full-scale Platform (1,650 kg MTOW)','フルスケールプラットフォーム（1,650kg MTOW）'],
+    'road4-desc':  ['Full-scale vehicle with hydrogen-compatible propulsion upgrade. JCAB/MoD certification track. Defense procurement contracts. Commercial spaceport operations begin.','水素対応推進にアップグレードしたフルスケール機体。JCAB/防衛省認証トラック。防衛調達契約。商用宇宙港運用開始。'],
+    'road5-h3':    ['Al-B Solid Metal Propulsion Integration','Al-B固体金属推進統合'],
+    'road5-desc':  ['Friable rod propulsion replaces turbojet if theoretical energy density advantage is experimentally validated. Pathway to personal air mobility opens if economics hold.','理論的なエネルギー密度優位性が実験的に検証された場合、脆性ロッド推進がターボジェットを置き換える。経済性が成立すれば個人航空移動への道が開く。'],
+    // TRACTION
+    'tract-tag':   ['Proof Points','実証済みポイント'],
+    'tract-h2':    ['What exists today.','今日、存在するもの。'],
+    'tract-lead':  ['We distinguish between what is proven, what is in progress, and what is a design target. Every claim here is backed by data or formal submission.','実証済み・進行中・設計目標を明確に区別する。ここに記載するすべての主張はデータまたは正式提出により裏付けられている。'],
+    'tract1-h3':   ['CFD Analysis Complete','CFD解析完了'],
+    'tract1-desc': ['OpenFOAM v2406. Full four-configuration analysis. Cd=0.065, Cl=0.150, CL_α=1.934/rad, Cm_α=+0.415/rad. Static instability confirmed — NDI requirement proven.','OpenFOAM v2406。全4形態解析完了。Cd=0.065、Cl=0.150、CL_α=1.934/rad、Cm_α=+0.415/rad。静的不安定確認済み——NDI必要性実証。'],
+    'tract2-h3':   ['Japan MOD ATLA Submitted','防衛省ATLA提出済み'],
+    'tract2-desc': ['Formal submission to Japan Defense Acquisition, Technology and Logistics Agency. Under ministry review 2026.','防衛装備庁（ATLA）への正式提出完了。2026年省内審査中。'],
+    'tract3-h3':   ['Patent NTK-2026-PROP-005','特許NTK-2026-PROP-005'],
+    'tract3-desc': ['Friable rod solid metal composite propulsion. Tribological feed mechanism, dual-axis throttle, multi-mode operation. Patent application in preparation.','脆性ロッド固体金属複合燃料推進。摩擦脆性供給機構・2軸スロットル・マルチモード動作。特許出願準備中。'],
+    'tract4-h3':   ['NDI SIL Environment Running','NDI SIL環境稼働中'],
+    'tract4-desc': ['ArduPilot SITL + JSBSim simulation. Python NDI control law implemented. 3-mode operation (hover/fault/transition) running. HIL integration next.','ArduPilot SITL＋JSBSimシミュレーション。Python NDI制御則実装済み。3モード動作（ホバー/故障/遷移）稼働中。HIL統合が次ステップ。'],
+    'tract5-h3':   ['70 cm PoC Prototype — In Build','70cm PoCプロトタイプ——製作中'],
+    'tract5-desc': ['6× EDF components ordered. Matek flight controller selected. 3D design in progress. Physical demonstrations of NDI, GPS-denied landing, and fault recovery targeted August 2026.','EDF×6基発注済み。Matek飛行コントローラー選定済み。3D設計進行中。NDI・GPS非依存着陸・故障回復の物理実証を2026年8月に予定。'],
+    // ASK
+    'ask1-h3':     ['NEDO DTSU Round 10 Co-submission','NEDO DTSU第10回 共同申請'],
+    'ask1-desc':   ['DTSU requires a VC/CVC investment intention letter covering ≥1/3 of eligible costs. Subsidy up to ¥500M at 2/3 rate over 24 months. PoC prototype → TRL 5 is the deliverable.','DTSUはVC/CVCの出資意向確認書（補助対象費用の1/3以上）を必須とする。補助率2/3、最大¥500M、期間24ヶ月。PoCプロトタイプ→TRL5が成果物。'],
+    'ask2-h3':     ['Bridge Seed — ¥3–5M (SAFE / Convertible Note)','ブリッジシード ¥3〜5M（SAFE / 転換社債）'],
+    'ask2-desc':   ['DTSU subsidy is paid in arrears. A 6–9 month cash flow gap exists between adoption and first payment. Bridge capital enables prototype execution, patent filings, and operations during the grant period.','DTSU補助金は後払い。採択から初回入金まで6〜9ヶ月のキャッシュフローギャップが生じる。ブリッジ資金により補助事業期間中のプロトタイプ実行・特許出願・事業運営が可能になる。'],
+    // TEAM
+    'koray-h3':    ['Ucuncu Koray','Ucuncu Koray（ウジュンジュ コレイ）'],
+    'koray-bio':   ['MSc Materials & Energy Science, Science Tokyo (former Tokyo Tech). Global R&D Lead, Teraoka Seiko (current). 10+ years mechatronics, robotics, and AI. Leads EVO-T aerodynamic design, CFRP/Ti composite structures, CFD workflow, and IP strategy.','東京科学大学（旧東工大）材料・エネルギー科学修士。株式会社寺岡精工グローバルR&Dリード（現職）。メカトロニクス・ロボティクス・AI実装10年以上。EVO-T空力設計・CFRP/Ti複合材構造・CFDワークフロー・IP戦略を主導。'],
+    'gabriel-h3':  ['Gabriel Peixoto','Gabriel Peixoto（ペイショト ガブリエル）'],
+    'gabriel-bio': ['MSc Computer Science (Computer Vision & HCI). PhD candidate, AI Systems, Osaka University. FPGA, DSP, GPU embedded systems specialist. 5 years AI robotics at Connected Robotics. Leads all real-time flight software: NDI control law implementation, ArduPilot SIL/HIL architecture, GPS-denied navigation, and Matek flight controller integration.','コンピュータサイエンス修士（CV・HCI）。大阪大学知能システム博士課程。FPGA・DSP・GPU組込みシステム専門家。Connected Roboticsでのロボティクス5年。NDI制御則実装・ArduPilot SIL/HIL・GPS非依存航法・Matek飛行コントローラー統合など全リアルタイム飛行ソフトウェアを主導。'],
+
   };
 
   var btn = document.getElementById('lang-btn');
