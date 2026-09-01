@@ -285,6 +285,7 @@
     <li><a href="#propulsion">Propulsion</a></li>
     <li><a href="#market">Market</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#business">Business</a></li>
     <li><a href="#ask">The Ask</a></li>
     <li><a href="#team">Team</a></li>
   </ul>
@@ -330,6 +331,48 @@
   </div>
 
 
+</div>
+
+<div class="divider"></div>
+
+<!-- HERO IMAGE — rename your file to evot-hero.jpg and place next to this HTML -->
+<div id="hero-image" style="width:100%;background:var(--deep);position:relative;overflow:hidden;">
+  <img
+    src="evot-hero.jpg"
+    alt="EVO-T — Tactical Hybrid Jet VTOL"
+    onerror="this.parentElement.style.display='none'"
+    style="
+      width:100%;
+      max-height:640px;
+      object-fit:cover;
+      object-position:center;
+      display:block;
+      opacity:0.92;
+    "
+  />
+  <div style="
+    position:absolute;
+    bottom:0;left:0;right:0;
+    height:120px;
+    background:linear-gradient(to top, var(--black), transparent);
+    pointer-events:none;
+  "></div>
+  <div style="
+    position:absolute;
+    top:0;left:0;right:0;
+    height:60px;
+    background:linear-gradient(to bottom, var(--black), transparent);
+    pointer-events:none;
+  "></div>
+  <div style="
+    position:absolute;
+    bottom:24px;right:32px;
+    font-family:var(--mono);
+    font-size:10px;
+    color:rgba(255,255,255,0.4);
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+  ">EVO-T · Tokyo Dynamics KK</div>
 </div>
 
 <div class="divider"></div>
@@ -529,38 +572,16 @@
       <div class="prop-future">
         <span class="badge badge-roadmap" style="margin-bottom:14px;display:inline-block;">○ Phase 3 Research — EVO-T v3+</span>
         <h3>Al-B Solid Composite Fuel Rod</h3>
-        <p>Details can be shared upon request.</p>
-        <div class="prop-specs">
-          <div class="spec-row"><span class="spec-key">Energy density (theoretical)</span><span class="spec-val">210 MJ/L vs 34 Jet-A</span></div>
-          <div class="spec-row"><span class="spec-key">Volume advantage (calc.)</span><span class="spec-val">6.1× over Jet-A</span></div>
+        <p>Details available upon request under NDA.</p>
+        <div style="margin-top:20px;padding:20px 24px;border:1px solid rgba(255,179,71,0.25);background:rgba(255,179,71,0.04);">
+          <p style="font-family:var(--mono);font-size:11px;color:var(--amber);letter-spacing:0.1em;text-transform:uppercase;margin:0;">
+            ○ Confidential — available upon request
+          </p>
         </div>
-
-        <div class="fuel-section" style="margin-top:20px;">
-          <div class="fuel-note">⚠ THEORETICAL CALCULATION — not yet experimentally validated</div>
-          <div class="fuel-bars">
-            <div class="fuel-row">
-              <div class="fuel-name">Jet-A (baseline)</div>
-              <div class="fuel-bar-wrap">
-                <div class="fuel-bar jeta" style="width:16.2%">34 MJ/L</div>
-              </div>
-              <div class="fuel-val">34 MJ/L</div>
-            </div>
-            <div class="fuel-row">
-              <div class="fuel-name">Liquid H₂</div>
-              <div class="fuel-bar-wrap">
-                <div class="fuel-bar lh2" style="width:4.1%">8.7</div>
-              </div>
-              <div class="fuel-val">8.7 MJ/L</div>
-            </div>
-            <div class="fuel-row">
-              <div class="fuel-name" style="color:var(--amber)">Al-B Rod (theory)</div>
-              <div class="fuel-bar-wrap">
-                <div class="fuel-bar alb" style="width:100%">210 MJ/L — theoretical</div>
-              </div>
-              <div class="fuel-val" style="color:var(--amber)">210 MJ/L</div>
-            </div>
-          </div>
-        </div>
+      </div>
+    </div>
+  </div>
+</div>
       </div>
     </div>
   </div>
@@ -664,7 +685,8 @@
     </div>
     <div class="tl-item">
       <div class="tl-year">2027 mid – 2028</div>
-      <div class="tl-dot">
+      </div>
+      <div class="tl-dot"></div>
       <div class="tl-content">
         <h3>Series A — Alpha-1 (1/3 scale)</h3>
         <p>Alpha-1 free flight with AMT Nike + EDF hybrid. ATLA formal procurement engagement. Spaceport LOI. Koray full-time. Team expansion to 10–15.</p>
@@ -681,7 +703,7 @@
       </div>
     </div>
     <div class="tl-item">
-      <div class="tl-year">2030 +</div>
+      <div class="tl-year">2030+</div>
       <div class="tl-dot future"></div>
       <div class="tl-content">
         <h3>Al-B Solid Metal Propulsion Integration</h3>
@@ -747,6 +769,67 @@
 
 <div class="divider"></div>
 
+<!-- BUSINESS MODEL -->
+<section id="business">
+  <div class="section-tag">Business Model</div>
+  <h2>Break-even: 20 units.<br>One defense contract.</h2>
+  <p class="section-lead">
+    Four revenue streams across defense, logistics, and infrastructure — each at different margins and timescales. Defense unit sales anchor the model; SaaS and MaaS compound over time.
+  </p>
+
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-bottom:32px;">
+    <div style="background:var(--surface);padding:28px 22px;border-top:2px solid var(--accent);">
+      <div style="font-family:var(--mono);font-size:10px;color:var(--accent);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:14px;">機体販売<br>Unit Sales</div>
+      <div style="font-family:var(--mono);font-size:18px;font-weight:700;color:var(--white);margin-bottom:6px;">¥120M</div>
+      <div style="font-size:11px;color:var(--muted);margin-bottom:14px;">$800K per unit</div>
+      <div style="font-size:12px;color:var(--green);font-weight:600;margin-bottom:8px;">62% gross margin</div>
+      <div style="font-size:11px;color:var(--muted);border-top:1px solid var(--border);padding-top:10px;">Defense procurement</div>
+    </div>
+    <div style="background:var(--surface);padding:28px 22px;border-top:2px solid var(--accent);">
+      <div style="font-family:var(--mono);font-size:10px;color:var(--accent);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:14px;">MaaS課金<br>Mission-as-a-Service</div>
+      <div style="font-family:var(--mono);font-size:18px;font-weight:700;color:var(--white);margin-bottom:6px;">$15/kg</div>
+      <div style="font-size:11px;color:var(--muted);margin-bottom:14px;">per 500 km</div>
+      <div style="font-size:12px;color:var(--green);font-weight:600;margin-bottom:8px;">55% gross margin</div>
+      <div style="font-size:11px;color:var(--muted);border-top:1px solid var(--border);padding-top:10px;">Per-flight billing</div>
+    </div>
+    <div style="background:var(--surface);padding:28px 22px;border-top:2px solid var(--accent);">
+      <div style="font-family:var(--mono);font-size:10px;color:var(--accent);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:14px;">VベースSaaS<br>V-Base SaaS</div>
+      <div style="font-family:var(--mono);font-size:18px;font-weight:700;color:var(--white);margin-bottom:6px;">¥15M</div>
+      <div style="font-size:11px;color:var(--muted);margin-bottom:14px;">+ 15% annual</div>
+      <div style="font-size:12px;color:var(--green);font-weight:600;margin-bottom:8px;">70%+ gross margin</div>
+      <div style="font-size:11px;color:var(--muted);border-top:1px solid var(--border);padding-top:10px;">Infrastructure software</div>
+    </div>
+    <div style="background:var(--surface);padding:28px 22px;border-top:2px solid var(--accent);">
+      <div style="font-family:var(--mono);font-size:10px;color:var(--accent);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:14px;">フリートリース<br>Fleet Leasing</div>
+      <div style="font-family:var(--mono);font-size:18px;font-weight:700;color:var(--white);margin-bottom:6px;">Gov contract</div>
+      <div style="font-size:11px;color:var(--muted);margin-bottom:14px;">Monthly recurring</div>
+      <div style="font-size:12px;color:var(--green);font-weight:600;margin-bottom:8px;">40% gross margin</div>
+      <div style="font-size:11px;color:var(--muted);border-top:1px solid var(--border);padding-top:10px;">Managed fleet</div>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-bottom:24px;">
+    <div style="background:var(--surface);padding:28px;text-align:center;">
+      <div style="font-family:var(--mono);font-size:32px;font-weight:700;color:var(--green);margin-bottom:6px;">20機</div>
+      <div style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;">損益分岐 / Break-even</div>
+    </div>
+    <div style="background:var(--surface);padding:28px;text-align:center;">
+      <div style="font-family:var(--mono);font-size:32px;font-weight:700;color:var(--accent);margin-bottom:6px;">62%</div>
+      <div style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;">粗利率 / Gross margin</div>
+    </div>
+    <div style="background:var(--surface);padding:28px;text-align:center;">
+      <div style="font-family:var(--mono);font-size:32px;font-weight:700;color:var(--amber);margin-bottom:6px;">¥186B</div>
+      <div style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;">Year 8 売上目標 / Revenue target</div>
+    </div>
+  </div>
+
+  <p style="font-size:11px;color:var(--muted);font-style:italic;border-left:2px solid var(--dim);padding-left:12px;">
+    注：売上計画は予測値です。実際の結果は異なる場合があります。/ Revenue projections are estimates. Actual results may differ materially.
+  </p>
+</section>
+
+<div class="divider"></div>
+
 <!-- ASK -->
 <section id="ask">
   <div class="section-tag">Investment Opportunity</div>
@@ -792,13 +875,11 @@
       <div class="team-card">
         <span class="team-role">CEO · Principal Researcher</span>
         <h3>Ucuncu Koray</h3>
-        <div class="subtitle">ウジュンジュ コレイ — 東京ダイナミクス株式会社</div>
-        <p>MSc Materials &amp; Energy Science, Science Tokyo (former Tokyo Tech). Global R&D Strategy Lead, Teraoka Seiko (current, provides financial stability during build phase). 10+ years mechatronics, robotics, and AI implementation in industrial manufacturing. Leads EVO-T aerodynamic design, CFRP/Ti composite structures, CFD workflow, and patent strategy. Leading EVO-T aerodynamic design, CFRP/Ti composite structures, CFD workflow, and IP strategy.</p>
+        <p>MSc Materials &amp; Energy Science, Science Tokyo (former Tokyo Tech). Global R&D Strategy Lead, Teraoka Seiko (current, provides financial stability during build phase). 10+ years mechatronics, robotics, and AI implementation in industrial manufacturing. Leads EVO-T aerodynamic design, CFRP/Ti composite structures, CFD workflow, and IP strategy.</p>
       </div>
       <div class="team-card">
         <span class="team-role">CTO · Co-researcher</span>
         <h3>Gabriel Peixoto</h3>
-        <div class="subtitle">ペイショト ガブリエル — 大阪大学 博士課程</div>
         <p>MSc Computer Science (Computer Vision &amp; HCI). PhD candidate, AI Systems, Osaka University. 5 years AI robotics at Connected Robotics. FPGA, DSP, GPU embedded systems specialist. Leads all real-time flight software: NDI control law implementation, ArduPilot SIL/HIL architecture, GPS-denied navigation (Extended Kalman Filter design, optical flow, visual signature system), and Matek flight controller integration.</p>
       </div>
     </div>
@@ -818,7 +899,7 @@
         <h3>Friable Rod Solid Metal Composite Propulsion System</h3>
         <p>摩擦脆性供給式多段モード金属複合燃料推進システム — Tribological abrasion feed, dual-axis throttle (ṁ = F × ω × κ × ρ), voice coil &lt;20ms, turbojet/ramjet/scramjet single-fuel, Al fuel cycle</p>
       </div>
-      <span class="badge badge-proven">★ Filing July 2026</span>
+      <span class="badge badge-target">◎ In Preparation</span>
     </div>
     <div class="patent-item">
       <div class="patent-ref">NTK-2026-NAV-006</div>
