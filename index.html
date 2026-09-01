@@ -280,15 +280,24 @@
 <nav>
   <div class="nav-logo">TOKYO DYNAMICS</div>
   <ul class="nav-links">
-    <li><a href="#gap">The Gap</a></li>
-    <li><a href="#technology">Technology</a></li>
-    <li><a href="#propulsion">Propulsion</a></li>
-    <li><a href="#market">Market</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#business">Business</a></li>
-    <li><a href="#ask">The Ask</a></li>
-    <li><a href="#team">Team</a></li>
+    <li><a href="#gap" data-lang-key="nav-gap">The Gap</a></li>
+    <li><a href="#technology" data-lang-key="nav-tech">Technology</a></li>
+    <li><a href="#propulsion" data-lang-key="nav-prop">Propulsion</a></li>
+    <li><a href="#market" data-lang-key="nav-market">Market</a></li>
+    <li><a href="#roadmap" data-lang-key="nav-roadmap">Roadmap</a></li>
+    <li><a href="#business" data-lang-key="nav-business">Business</a></li>
+    <li><a href="#ask" data-lang-key="nav-ask">The Ask</a></li>
+    <li><a href="#team" data-lang-key="nav-team">Team</a></li>
   </ul>
+  <button id="lang-toggle" onclick="toggleLang()" style="
+    font-family:var(--mono);font-size:11px;color:var(--accent);
+    background:transparent;border:1px solid var(--border);
+    padding:5px 14px;cursor:pointer;letter-spacing:0.1em;
+    text-transform:uppercase;transition:all 0.2s;white-space:nowrap;
+  " onmouseover="this.style.borderColor='var(--accent)'" 
+    onmouseout="this.style.borderColor='var(--border)'">
+    EN
+  </button>
 </nav>
 
 <!-- HERO -->
@@ -297,11 +306,11 @@
   <div class="hero-glow"></div>
 
   <div class="fade-up">
-    <div class="hero-tag">EVO-T — Tactical Hybrid Jet VTOL</div>
+    <div class="hero-tag" data-lang-key="hero-tag">EVO-T — Tactical Hybrid Jet VTOL</div>
   </div>
-  <h1 class="fade-up d1">Beyond the<br><span>speed wall.</span></h1>
+  <h1 class="fade-up d1"><span data-lang-key="hero-h1a">Beyond the</span><br><span>speed wall.</span></h1>
   <p class="hero-sub fade-up d2">
-    A Blended Wing Body hybrid-jet VTOL targeting 600 km/h cruise with zero runway dependency and GPS-denied autonomous navigation — engineered in Japan, for defense and spaceport logistics markets where no solution currently exists.
+    <span data-lang-key="hero-sub">A Blended Wing Body hybrid-jet VTOL targeting 600 km/h cruise with zero runway dependency and GPS-denied autonomous navigation — engineered in Japan, for defense and spaceport logistics markets where no solution currently exists.</span>
   </p>
   <p class="hero-disclaimer fade-up d2">
     ★ = CFD-confirmed &nbsp;|&nbsp; ◎ = Design target &nbsp;|&nbsp; ○ = Research roadmap
@@ -391,9 +400,9 @@
 <!-- GAP -->
 <div id="gap" class="full-bleed" style="background: var(--deep);">
   <div class="inner">
-    <div class="section-tag">The Problem</div>
-    <h2>Aviation's 70-year<br>empty quadrant</h2>
-    <p class="section-lead">
+    <div class="section-tag" data-lang-key="gap-tag">The Problem</div>
+    <h2 data-lang-key="gap-h2">Aviation's 70-year<br>empty quadrant</h2>
+    <p class="section-lead" data-lang-key="gap-lead">
       No aircraft today can take off vertically from an unprepared surface, cruise at jet speeds, and navigate autonomously without GPS. This gap has existed since the Wright Brothers and remains unfilled.
     </p>
 
@@ -451,8 +460,8 @@
 
 <!-- TECHNOLOGY -->
 <section id="technology">
-  <div class="section-tag">Core IP</div>
-  <h2>Three technologies.<br>One integrated moat.</h2>
+  <div class="section-tag" data-lang-key="tech-tag">Core IP</div>
+  <h2 data-lang-key="tech-h2">Three technologies.<br>One integrated moat.</h2>
   <p class="section-lead">
     Each technology is co-designed with the others. The NDI control law is tuned to this specific airframe. The navigation system feeds into the same EKF that underpins NDI. Neither works at full capability without the other.
   </p>
@@ -549,9 +558,9 @@
 <!-- PROPULSION -->
 <div id="propulsion" class="full-bleed" style="background:var(--deep);">
   <div class="inner">
-    <div class="section-tag">Propulsion Strategy</div>
-    <h2>Staged. De-risked.<br>Patented long-term.</h2>
-    <p class="section-lead">
+    <div class="section-tag" data-lang-key="prop-tag">Propulsion Strategy</div>
+    <h2 data-lang-key="prop-h2">Staged. De-risked.<br>Patented long-term.</h2>
+    <p class="section-lead" data-lang-key="prop-lead">
       EVO-T v1 uses proven jet propulsion today. The solid metal composite fuel system is a separately-tracked research program — patent application in preparation, to be integrated in v3. Research risk and execution risk do not share the same timeline.
     </p>
 
@@ -591,9 +600,9 @@
 
 <!-- MOAT -->
 <section id="moat">
-  <div class="section-tag">Competitive Moat</div>
-  <h2>Copy one piece.<br>Get nothing.</h2>
-  <p class="section-lead">The three technologies are co-designed. No single component functions at full capability without the other two. The integration is the invention.</p>
+  <div class="section-tag" data-lang-key="moat-tag">Competitive Moat</div>
+  <h2 data-lang-key="moat-h2">Copy one piece.<br>Get nothing.</h2>
+  <p class="section-lead" data-lang-key="moat-lead">The three technologies are co-designed. No single component functions at full capability without the other two. The integration is the invention.</p>
   <div class="moat-grid">
     <div class="moat-card">
       <h3>Copy the BWB airframe</h3>
@@ -628,9 +637,9 @@
 <!-- MARKET -->
 <div id="market" class="full-bleed" style="background:var(--deep);">
   <div class="inner">
-    <div class="section-tag">Market</div>
-    <h2>The customer exists today.<br>The product does not.</h2>
-    <p class="section-lead">Defense and spaceport customers have funded procurement requirements that no existing aircraft can meet. This is not a market to create — it is a market waiting for a product.</p>
+    <div class="section-tag" data-lang-key="market-tag">Market</div>
+    <h2 data-lang-key="market-h2">The customer exists today.<br>The product does not.</h2>
+    <p class="section-lead" data-lang-key="market-lead">Defense and spaceport customers have funded procurement requirements that no existing aircraft can meet. This is not a market to create — it is a market waiting for a product.</p>
     <div class="market-grid">
       <div class="market-card">
         <span class="market-tag">Initial Market · Defense</span>
@@ -661,9 +670,9 @@
 
 <!-- ROADMAP -->
 <section id="roadmap">
-  <div class="section-tag">Roadmap</div>
-  <h2>Staged execution.<br>Each phase funded before the next.</h2>
-  <p class="section-lead">Research risk (Al-B propulsion) and execution risk (EVO-T platform) are separated and progress on independent timelines.</p>
+  <div class="section-tag" data-lang-key="road-tag">Roadmap</div>
+  <h2 data-lang-key="road-h2">Staged execution.<br>Each phase funded before the next.</h2>
+  <p class="section-lead" data-lang-key="road-lead">Research risk (Al-B propulsion) and execution risk (EVO-T platform) are separated and progress on independent timelines.</p>
   <div class="timeline">
     <div class="tl-item">
       <div class="tl-year">2021 Jan</div>
@@ -771,9 +780,9 @@
 
 <!-- BUSINESS MODEL -->
 <section id="business">
-  <div class="section-tag">Business Model</div>
-  <h2>Break-even: 20 units.<br>One defense contract.</h2>
-  <p class="section-lead">
+  <div class="section-tag" data-lang-key="biz-tag">Business Model</div>
+  <h2 data-lang-key="biz-h2">Break-even: 20 units.<br>One defense contract.</h2>
+  <p class="section-lead" data-lang-key="biz-lead">
     Four revenue streams across defense, logistics, and infrastructure — each at different margins and timescales. Defense unit sales anchor the model; SaaS and MaaS compound over time.
   </p>
 
@@ -824,7 +833,7 @@
   </div>
 
   <p style="font-size:11px;color:var(--muted);font-style:italic;border-left:2px solid var(--dim);padding-left:12px;">
-    注：売上計画は予測値です。実際の結果は異なる場合があります。/ Revenue projections are estimates. Actual results may differ materially.
+    注：売上計画は予測値です。実際の結果は異なる場合があります。/ <span data-lang-key="biz-disc">Revenue projections are estimates. Actual results may differ materially.</span>
   </p>
 </section>
 
@@ -832,9 +841,9 @@
 
 <!-- ASK -->
 <section id="ask">
-  <div class="section-tag">Investment Opportunity</div>
-  <h2>Two asks.<br>One aligned interest.</h2>
-  <p class="section-lead">We are approaching leading deep tech VCs for NEDO DTSU co-submission partnership and bridge seed capital. Both asks serve the same goal: getting EVO-T from SIL to physical demonstration.</p>
+  <div class="section-tag" data-lang-key="ask-tag">Investment Opportunity</div>
+  <h2 data-lang-key="ask-h2">Two asks.<br>One aligned interest.</h2>
+  <p class="section-lead" data-lang-key="ask-lead">We are approaching leading deep tech VCs for NEDO DTSU co-submission partnership and bridge seed capital. Both asks serve the same goal: getting EVO-T from SIL to physical demonstration.</p>
   <div class="ask-grid">
     <div class="ask-card primary">
       <div class="ask-num">01</div>
@@ -868,9 +877,9 @@
 <!-- TEAM -->
 <div id="team" class="full-bleed" style="background:var(--deep);">
   <div class="inner">
-    <div class="section-tag">Team</div>
-    <h2>Materials science<br>meets embedded systems.</h2>
-    <p class="section-lead">The technical depth to build EVO-T sits across both founders. Neither can be separated from the platform they are designing.</p>
+    <div class="section-tag" data-lang-key="team-tag">Team</div>
+    <h2 data-lang-key="team-h2">Materials science<br>meets embedded systems.</h2>
+    <p class="section-lead" data-lang-key="team-lead">The technical depth to build EVO-T sits across both founders. Neither can be separated from the platform they are designing.</p>
     <div class="team-grid">
       <div class="team-card">
         <span class="team-role">CEO · Principal Researcher</span>
@@ -890,8 +899,8 @@
 
 <!-- PATENTS -->
 <section id="patents">
-  <div class="section-tag">Intellectual Property</div>
-  <h2>Three patents.<br>Three interlocking moats.</h2>
+  <div class="section-tag" data-lang-key="pat-tag">Intellectual Property</div>
+  <h2 data-lang-key="pat-h2">Three patents.<br>Three interlocking moats.</h2>
   <div class="patent-list">
     <div class="patent-item">
       <div class="patent-ref">NTK-2026-PROP-005</div>
@@ -969,5 +978,146 @@
     fuelObs.observe(section);
   });
 </script>
+
+<script>
+// ── Language data ──────────────────────────────────────────────────────────
+const LANG_DATA = {
+  // NAV
+  'nav-gap':       { en:'The Gap',     jp:'ギャップ' },
+  'nav-tech':      { en:'Technology',  jp:'技術' },
+  'nav-prop':      { en:'Propulsion',  jp:'推進' },
+  'nav-market':    { en:'Market',      jp:'市場' },
+  'nav-roadmap':   { en:'Roadmap',     jp:'ロードマップ' },
+  'nav-business':  { en:'Business',    jp:'事業' },
+  'nav-ask':       { en:'The Ask',     jp:'提案' },
+  'nav-team':      { en:'Team',        jp:'チーム' },
+
+  // HERO
+  'hero-tag':      { en:'EVO-T — Deep Tech VTOL', jp:'EVO-T — ディープテックVTOL' },
+  'hero-h1a':      { en:'Beyond the', jp:'超える、' },
+  'hero-h1b':      { en:'speed wall.', jp:'速度の壁を。' },
+  'hero-sub':      { en:'The first autonomous hybrid-jet VTOL capable of 600 km/h cruise with zero runway dependency and GPS-denied precision navigation — engineered in Japan, for defense and spaceport logistics markets where no solution currently exists.',
+                     jp:'時速600km巡航・完全滑走路不要・GPS非依存精密航法を実現する世界初の自律ハイブリッドジェットVTOL。解決策が存在しない防衛・宇宙港物流市場のために、日本で設計・開発。' },
+  'hero-disc':     { en:'<span data-lang-key="hero-disc">★ = CFD-confirmed  |  ◎ = Design target  |  ○ = Research roadmap</span>',
+                     jp:'★ = CFD実証済  |  ◎ = 設計目標  |  ○ = 研究ロードマップ' },
+
+  // LEGEND
+  'legend-proven': { en:'Proven', jp:'実証済' },
+  'legend-proven-desc': { en:'Data exists today — CFD results, formal submissions, completed work',
+                           jp:'今日存在するデータ — CFD結果・正式提出・完了済み作業' },
+  'legend-target': { en:'Target', jp:'目標' },
+  'legend-target-desc': { en:'Design specification — to be validated during DTSU PoC program',
+                           jp:'設計仕様 — DTSUフェーズで検証予定' },
+  'legend-roadmap': { en:'Roadmap', jp:'ロードマップ' },
+  'legend-roadmap-desc': { en:'Future research track, theoretical / PhD-stage, not the current product',
+                            jp:'将来の研究トラック — 理論段階。現在の製品ではない' },
+
+  // GAP SECTION
+  'gap-tag':   { en:'The Problem', jp:'課題' },
+  'gap-h2':    { en:"Aviation's 70-year empty quadrant", jp:'航空の70年間の空白象限' },
+  'gap-lead':  { en:'No aircraft today can take off vertically from an unprepared surface, cruise at jet speeds, and navigate autonomously without GPS. This gap has existed since the Wright Brothers.',
+                 jp:'今日、未整備の地点から垂直に離陸し、ジェット速度で巡航し、GPSなしに自律航行できる航空機は世界に存在しない。このギャップはライト兄弟の時代から続いている。' },
+  'gap-stmt':  { en:"<span data-lang-key="gap-stmt">Between these two worlds — VTOL-capable at jet cruise speed — there is not a single operational aircraft anywhere in the world today.</span>",
+                 jp:'この2つの世界の間——VTOL能力を持ちながらジェット巡航速度を実現——運用可能な航空機は世界に1機も存在しない。' },
+
+  // TECHNOLOGY SECTION
+  'tech-tag':  { en:'Core IP', jp:'コアIP' },
+  'tech-h2':   { en:'Three technologies.
+One integrated moat.', jp:'3つの技術。
+統合されたモート。' },
+  'tech-lead': { en:'Anyone can bolt jets onto a drone. What they get is a demonstration object — one that cannot manage the transition, cannot fly without GPS, and cannot carry useful range. EVO-T solves all three problems simultaneously with proprietary, patent-protected technology.',
+                 jp:'ドローンにジェットを取り付けることは誰でもできる。しかし得られるのは遷移を管理できず、GPSなしでは飛べず、実用航続距離を持たない「デモ用物体」だけだ。EVO-Tは独自の特許保護技術で3つの問題を同時に解決する。' },
+
+  // PROPULSION SECTION
+  'prop-tag':  { en:'Propulsion Strategy', jp:'推進戦略' },
+  'prop-h2':   { en:'Staged. De-risked.
+Patented long-term.', jp:'段階的。リスク分散。
+長期特許保護。' },
+  'prop-lead': { en:'EVO-T v1 uses proven jet propulsion today. The solid metal composite fuel system is a separately-tracked research program — patent application in preparation, to be integrated in v3. Research risk and execution risk do not share the same timeline.',
+                 jp:'EVO-T v1は実証済みのジェット推進を使用。固体金属複合燃料システムは独立した研究プログラム——特許出願準備中、v3で統合予定。研究リスクと実行リスクは同じタイムラインを共有しない。' },
+
+  // MOAT SECTION
+  'moat-tag':  { en:'Competitive Moat', jp:'競争的堀' },
+  'moat-h2':   { en:'Copy one piece.
+Get nothing.', jp:'1つをコピーしても
+意味がない。' },
+  'moat-lead': { en:'The three technologies are co-designed. No single component functions at full capability without the other two. The integration is the invention.',
+                 jp:'3つの技術は共同設計されている。どれか1つを単独でコピーしても、他の2つなしでは完全な機能を発揮しない。統合こそが発明である。' },
+
+  // MARKET SECTION
+  'market-tag':  { en:'Market', jp:'市場' },
+  'market-h2':   { en:"The customer exists today.
+The product does not.", jp:'顧客は今日存在する。
+製品は存在しない。' },
+  'market-lead': { en:'Defense and spaceport customers have funded procurement requirements that no existing aircraft can meet. This is not a market to create — it is a market waiting for a product.',
+                   jp:'防衛・宇宙港の顧客は、既存のいかなる航空機も満たすことができない調達要件に資金を充てている。これは創造すべき市場ではなく、製品を待っている市場だ。' },
+
+  // ROADMAP SECTION
+  'road-tag':  { en:'Roadmap', jp:'ロードマップ' },
+  'road-h2':   { en:'Staged execution.
+Each phase funded before the next.', jp:'段階的実行。
+各フェーズは次の前に資金調達。' },
+  'road-lead': { en:'Research risk (Al-B propulsion) and execution risk (EVO-T platform) are separated and progress on independent timelines.',
+                 jp:'研究リスク（Al-B推進）と実行リスク（EVO-Tプラットフォーム）は分離され、独立したタイムラインで進行する。' },
+
+  // BUSINESS MODEL SECTION
+  'biz-tag':   { en:'Business Model', jp:'ビジネスモデル' },
+  'biz-h2':    { en:'Break-even: 20 units.
+One defense contract.', jp:'損益分岐点：20機。
+防衛調達1契約。' },
+  'biz-lead':  { en:'Four revenue streams across defense, logistics, and infrastructure — each at different margins and timescales. Defense unit sales anchor the model; SaaS and MaaS compound over time.',
+                 jp:'防衛・物流・インフラにわたる4つの収益源——それぞれ異なるマージンとタイムスケール。防衛機体販売がモデルの基盤。SaaSとMaaSが時間とともに複利的に成長する。' },
+  'biz-disc':  { en:'Revenue projections are estimates. Actual results may differ materially.',
+                 jp:'売上計画は予測値です。実際の結果は大幅に異なる場合があります。' },
+
+  // ASK SECTION
+  'ask-tag':   { en:'Investment Opportunity', jp:'投資機会' },
+  'ask-h2':    { en:'Two asks.
+One aligned interest.', jp:'2つのご提案。
+1つの利益の一致。' },
+  'ask-lead':  { en:'We are approaching leading deep tech VCs for NEDO DTSU co-submission partnership and bridge seed capital. Both asks serve the same goal: getting EVO-T from SIL to physical demonstration.',
+                 jp:'主要なディープテックVCに対し、NEDO DTSU共同申請パートナーシップとブリッジシード資金についてご相談しています。両方の提案は同じ目標——EVO-TをSILから物理的実証へ——に向けたものです。' },
+
+  // TEAM SECTION
+  'team-tag':  { en:'Team', jp:'チーム' },
+  'team-h2':   { en:'Materials science
+meets embedded systems.', jp:'材料科学と
+組込みシステムの融合。' },
+  'team-lead': { en:'The technical depth to build EVO-T sits across both founders. Neither can be separated from the platform they are designing.',
+                 jp:'EVO-Tを構築するための技術的深度は両創業者にわたっている。どちらも設計しているプラットフォームから切り離すことはできない。' },
+
+  // PATENTS SECTION
+  'pat-tag':   { en:'Intellectual Property', jp:'知的財産' },
+  'pat-h2':    { en:'Three patents.
+Three interlocking moats.', jp:'3件の特許。
+3つの連動するモート。' },
+};
+
+let currentLang = 'en';
+
+function toggleLang() {
+  currentLang = currentLang === 'en' ? 'jp' : 'en';
+  const btn = document.getElementById('lang-toggle');
+  btn.textContent = currentLang === 'en' ? 'EN' : 'JP';
+  btn.style.color = currentLang === 'jp' ? 'var(--amber)' : 'var(--accent)';
+
+  // Swap all tagged elements
+  document.querySelectorAll('[data-lang-key]').forEach(el => {
+    const key = el.getAttribute('data-lang-key');
+    if (LANG_DATA[key]) {
+      const text = LANG_DATA[key][currentLang];
+      if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+        el.value = text;
+      } else {
+        el.innerHTML = text.replace(/\n/g, '<br>');
+      }
+    }
+  });
+
+  // Update html lang attribute
+  document.documentElement.lang = currentLang === 'jp' ? 'ja' : 'en';
+}
+</script>
+
 </body>
 </html>
