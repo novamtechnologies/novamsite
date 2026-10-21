@@ -88,7 +88,7 @@
   }
   .hero-tag::before { content: ''; display: block; width: 32px; height: 1px; background: var(--accent); }
   h1 {
-    font-size: clamp(48px, 7vw, 88px); font-weight: 700; line-height: 0.95;
+    font-size: clamp(32px, 4.3vw, 58px); font-weight: 700; line-height: 1.05;
     letter-spacing: -0.03em; color: var(--white); margin-bottom: 16px;
   }
   h1 span { color: var(--accent); }
@@ -163,33 +163,8 @@
   .metric-val.target { color: var(--accent); }
   .metric-val.roadmap { color: var(--amber); }
 
-  /* PROPULSION SECTION */
-  .prop-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 48px; }
-  .prop-now { background: var(--surface); padding: 36px; border-left: 3px solid var(--green); }
-  .prop-future { background: var(--surface); padding: 36px; border-left: 3px solid var(--amber); opacity: 0.85; }
-  .prop-now h3 { color: var(--green); margin-bottom: 12px; }
-  .prop-future h3 { color: var(--amber); margin-bottom: 12px; }
-  .prop-now p, .prop-future p { font-size: 13px; color: var(--muted); line-height: 1.6; margin-bottom: 16px; }
-  .prop-specs { display: flex; flex-direction: column; gap: 8px; }
-  .spec-row { display: flex; justify-content: space-between; font-size: 12px; border-bottom: 1px solid var(--border); padding-bottom: 6px; }
-  .spec-key { color: var(--muted); }
-  .spec-val { font-family: var(--mono); color: var(--body); }
-
-  /* FUTURE FUEL BARS — theoretical only */
-  .fuel-section { margin-top: 40px; padding: 28px 32px; background: rgba(255,179,71,0.05); border: 1px solid rgba(255,179,71,0.25); }
-  .fuel-note { font-size: 12px; color: var(--amber); font-family: var(--mono); margin-bottom: 20px; letter-spacing: 0.06em; }
-  .fuel-bars { display: flex; flex-direction: column; gap: 16px; }
-  .fuel-row { display: flex; align-items: center; gap: 16px; }
-  .fuel-name { font-size: 12px; color: var(--body); min-width: 140px; text-align: right; }
-  .fuel-bar-wrap { flex: 1; background: var(--dim); height: 30px; position: relative; overflow: hidden; }
-  .fuel-bar { height: 100%; display: flex; align-items: center; padding-left: 10px; font-family: var(--mono); font-size: 11px; font-weight: 700; }
-  .fuel-bar.jeta  { background: #2a4a6a; color: var(--body); }
-  .fuel-bar.lh2   { background: #1a3a5c; color: var(--subtle); }
-  .fuel-bar.alb   { background: linear-gradient(90deg, #664400, var(--amber)); color: var(--black); }
-  .fuel-val { font-family: var(--mono); font-size: 12px; color: var(--muted); min-width: 70px; }
-
   /* MOAT */
-  .moat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-top: 48px; }
+  .moat-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; margin-top: 48px; }
   .moat-card { background: var(--surface); padding: 28px; }
   .moat-card.full { grid-column: 1/-1; background: rgba(0,184,255,0.05); border: 1px solid rgba(0,184,255,0.25); }
   .moat-card p { font-size: 13px; color: var(--muted); line-height: 1.5; }
@@ -241,14 +216,6 @@
   .team-card .subtitle { font-size: 12px; color: var(--muted); margin-bottom: 14px; }
   .team-card p { font-size: 13px; color: var(--body); line-height: 1.6; }
 
-  /* PATENTS */
-  .patent-list { margin-top: 40px; display: flex; flex-direction: column; gap: 2px; }
-  .patent-item { background: var(--surface); padding: 20px 28px; display: flex; gap: 28px; align-items: center; }
-  .patent-ref { font-family: var(--mono); font-size: 11px; color: var(--accent); letter-spacing: 0.06em; min-width: 170px; }
-  .patent-title { flex: 1; }
-  .patent-title h3 { font-size: 13px; color: var(--white); margin-bottom: 3px; }
-  .patent-title p { font-size: 12px; color: var(--muted); }
-
   /* FOOTER */
   footer {
     background: var(--deep); border-top: 1px solid var(--border);
@@ -267,12 +234,21 @@
   @media (max-width: 900px) {
     nav { padding: 16px 20px; } .nav-links { display: none; }
     #hero, section, .full-bleed { padding: 80px 20px; }
-    .tech-grid, .market-grid, .team-grid, .ask-grid, .traction-grid, .moat-grid, .prop-grid { grid-template-columns: 1fr; }
+    .tech-grid, .market-grid, .team-grid, .ask-grid, .traction-grid, .moat-grid, .biz-grid, .bn-grid { grid-template-columns: 1fr; }
     .tl-year { min-width: 72px; font-size: 10px; }
-    .patent-item { flex-direction: column; gap: 10px; }
     footer { flex-direction: column; align-items: flex-start; }
     .hero-stats { gap: 24px; }
   }
+  #hero { min-height: auto; padding: 110px 48px 64px; }
+  .hero-split { display:grid; grid-template-columns: 1.05fr 0.95fr; gap:48px; align-items:center; position:relative; max-width:1280px; margin:0 auto; width:100%; }
+  .hero-media { position:relative; aspect-ratio: 4/5; max-height:620px; width:100%; border:1px solid var(--dim); background:linear-gradient(135deg,var(--surface),var(--deep)); overflow:hidden; display:flex; align-items:center; justify-content:center; }
+  .hero-media img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+  .hero-ph { font-family:var(--mono); font-size:11px; color:var(--muted); letter-spacing:0.14em; text-transform:uppercase; }
+  .hero-apps { display:flex; gap:10px; flex-wrap:wrap; margin:20px 0 28px; }
+  .hero-apps a { font-family:var(--mono); font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent); border:1px solid rgba(0,184,255,0.4); padding:8px 14px; text-decoration:none; }
+  .hero-stats { margin-bottom:24px; gap:28px; }
+  .hero-disclaimer { margin-bottom:0; }
+  @media (max-width:900px){ .hero-split{grid-template-columns:1fr; gap:32px;} .hero-media{aspect-ratio:16/10;} #hero{padding:90px 20px 48px;} .gap-table{display:block;overflow-x:auto;} }
 </style>
 </head>
 <body>
@@ -282,11 +258,10 @@
   <ul class="nav-links">
     <li><a href="#gap" data-lang-key="nav-gap">The Gap</a></li>
     <li><a href="#technology" data-lang-key="nav-tech">Technology</a></li>
-    <li><a href="#propulsion" data-lang-key="nav-prop">Propulsion</a></li>
-    <li><a href="#market" data-lang-key="nav-market">Market</a></li>
+    <li><a href="#market" data-lang-key="nav-market">Applications</a></li>
     <li><a href="#roadmap" data-lang-key="nav-roadmap">Roadmap</a></li>
     <li><a href="#business" data-lang-key="nav-business">Business</a></li>
-    <li><a href="#ask" data-lang-key="nav-ask">The Ask</a></li>
+    <li><a href="#ask" data-lang-key="nav-ask">Funding</a></li>
     <li><a href="#team" data-lang-key="nav-team">Team</a></li>
   </ul>
 <button id="lang-btn" style="font-family:var(--mono);font-size:11px;color:var(--accent);background:transparent;border:1px solid var(--border);padding:5px 14px;cursor:pointer;letter-spacing:0.1em;text-transform:uppercase;transition:all 0.2s;white-space:nowrap;">EN</button>
@@ -296,94 +271,31 @@
 <div id="hero">
   <div class="hero-grid"></div>
   <div class="hero-glow"></div>
-
-  <div class="fade-up">
-    <div class="hero-tag" data-lang-key="hero-tag">EVO-T — Tactical Hybrid Jet VTOL</div>
-  </div>
-  <h1 class="fade-up d1"><span data-lang-key="hero-h1a">Beyond the</span><br><span>speed wall.</span></h1>
-  <p class="hero-sub fade-up d2">
-    <span data-lang-key="hero-sub">A Blended Wing Body hybrid-jet VTOL targeting 600 km/h cruise with zero runway dependency and GPS-denied autonomous navigation — engineered in Japan, for defense and spaceport logistics markets where no solution currently exists.</span>
-  </p>
-  <p class="hero-disclaimer fade-up d2">
-    ★ = CFD-confirmed &nbsp;|&nbsp; ◎ = Design target &nbsp;|&nbsp; ○ = Research roadmap
-  </p>
-
-  <div class="hero-stats fade-up d3">
-    <div class="stat">
-      <div class="stat-val">0.065<span></span></div>
-      <div class="stat-label">Drag coefficient Cd</div>
-      <div class="stat-proof"><span class="badge badge-proven">★ CFD Confirmed</span></div>
+  <div class="hero-split">
+    <div class="hero-text">
+      <div class="fade-up"><div class="hero-tag" data-lang-key="hero-tag">EVO-T — Uncrewed High-Speed VTOL</div></div>
+      <h1 class="fade-up d1"><span data-lang-key="hero-h1a">To where there is no road,</span><br><span data-lang-key="hero-h1b">no signal, no crew.</span></h1>
+      <p class="hero-sub fade-up d2"><span data-lang-key="hero-sub">A blended-wing-body, jet-powered VTOL aircraft targeting about 600 km/h cruise with no runway and no dependence on GPS — engineered in Japan for emergency response and defence, where today's options fall short.</span></p>
+      <div class="hero-apps fade-up d2"><a href="#market" data-lang-key="hero-a1">Emergency response</a><a href="#market" data-lang-key="hero-a2">Defence</a><a href="#market" data-lang-key="hero-a3">Civil</a></div>
+      <div class="hero-stats fade-up d3"><div class="stat"><div class="stat-val">600<span> km/h</span></div><div class="stat-label" data-lang-key="hs1">Cruise speed target</div><div class="stat-proof"><span class="badge badge-target">◎ Design Target</span></div></div><div class="stat"><div class="stat-val">500+<span> km</span></div><div class="stat-label" data-lang-key="hs2">Range target</div><div class="stat-proof"><span class="badge badge-target">◎ Design Target</span></div></div><div class="stat"><div class="stat-val">0<span> m</span></div><div class="stat-label" data-lang-key="hs3">Runway required</div><div class="stat-proof"><span class="badge badge-target">◎ Design Target</span></div></div><div class="stat"><div class="stat-val">50<span> cm</span></div><div class="stat-label" data-lang-key="hs4">Test aircraft in build</div><div class="stat-proof"><span class="badge badge-target">◎ Building now</span></div></div></div>
+      <p class="hero-disclaimer fade-up d3">★ = Completed &nbsp;|&nbsp; ◎ = Design target / in progress &nbsp;|&nbsp; ○ = Planned (funding-dependent)</p>
     </div>
-    <div class="stat">
-      <div class="stat-val">+0.415<span>/rad</span></div>
-      <div class="stat-label">Cm_alpha (pitch instability)</div>
-      <div class="stat-proof"><span class="badge badge-proven">★ CFD Confirmed</span></div>
-    </div>
-    <div class="stat">
-      <div class="stat-val">600<span> km/h</span></div>
-      <div class="stat-label">Cruise speed target</div>
-      <div class="stat-proof"><span class="badge badge-target">◎ Design Target</span></div>
-    </div>
-    <div class="stat">
-      <div class="stat-val">0<span> m</span></div>
-      <div class="stat-label">Runway required</div>
-      <div class="stat-proof"><span class="badge badge-target">◎ Design Target</span></div>
+    <div class="hero-media fade-up d2">
+      <div class="hero-ph" data-lang-key="hero-ph">Hero image: EVO-T</div>
+      <img src="evot-hero.jpg" alt="EVO-T" onerror="this.style.display='none'">
     </div>
   </div>
-
-
 </div>
 
 <div class="divider"></div>
 
-<!-- HERO IMAGE — rename your file to evot-hero.jpg and place next to this HTML -->
-<div id="hero-image" style="width:100%;background:var(--deep);position:relative;overflow:hidden;">
-  <img
-    src="evot-hero.jpg"
-    alt="EVO-T — Tactical Hybrid Jet VTOL"
-    onerror="this.parentElement.style.display='none'"
-    style="
-      width:100%;
-      max-height:640px;
-      object-fit:cover;
-      object-position:center;
-      display:block;
-      opacity:0.92;
-    "
-  />
-  <div style="
-    position:absolute;
-    bottom:0;left:0;right:0;
-    height:120px;
-    background:linear-gradient(to top, var(--black), transparent);
-    pointer-events:none;
-  "></div>
-  <div style="
-    position:absolute;
-    top:0;left:0;right:0;
-    height:60px;
-    background:linear-gradient(to bottom, var(--black), transparent);
-    pointer-events:none;
-  "></div>
-  <div style="
-    position:absolute;
-    bottom:24px;right:32px;
-    font-family:var(--mono);
-    font-size:10px;
-    color:rgba(255,255,255,0.4);
-    letter-spacing:0.12em;
-    text-transform:uppercase;
-  ">EVO-T · Tokyo Dynamics KK</div>
-</div>
-
-<div class="divider"></div>
 
 <!-- LEGEND — shown once, referenced throughout -->
 <section style="padding-top: 56px; padding-bottom: 40px;">
   <div class="legend">
     <div class="legend-item"><span class="badge badge-proven">★ Proven</span> Data exists today — CFD results, formal submissions, completed work</div>
-    <div class="legend-item"><span class="badge badge-target">◎ Target</span> Design specification — to be validated during DTSU PoC program</div>
-    <div class="legend-item"><span class="badge badge-roadmap">○ Roadmap</span> Future research track — theoretical / PhD-stage, not the current product</div>
+    <div class="legend-item"><span class="badge badge-target">◎ Target</span> Design specification — to be validated in the test campaign</div>
+    <div class="legend-item"><span class="badge badge-roadmap">○ Roadmap</span> Future phase — planned, depends on funding</div>
   </div>
 </section>
 
@@ -394,9 +306,7 @@
   <div class="inner">
     <div class="section-tag" data-lang-key="gap-tag">The Problem</div>
     <h2 data-lang-key="gap-h2">Aviation's 70-year<br>empty quadrant</h2>
-    <p class="section-lead" data-lang-key="gap-lead">
-      No aircraft today can take off vertically from an unprepared surface, cruise at jet speeds, and navigate autonomously without GPS. This gap has existed since the Wright Brothers and remains unfilled.
-    </p>
+    <p class="section-lead" data-lang-key="gap-lead">No aircraft today can take off vertically from an unprepared surface, cruise at jet speeds, and navigate autonomously without GPS.</p>
 
     <table class="gap-table">
       <thead>
@@ -430,17 +340,10 @@
           <td><span class="cross">✗</span> GPS-required</td>
           <td style="color:var(--accent)">±2 cm target <span class="badge badge-target">◎</span></td>
         </tr>
-        <tr>
-          <td>Japanese sovereign IP</td>
-          <td><span class="cross">✗</span> Mostly foreign</td>
-          <td><span class="cross">✗</span> None exist</td>
-          <td><span class="cross">✗</span> None</td>
-          <td style="color:var(--green)">3 patents in preparation <span class="badge badge-target">◎</span></td>
-        </tr>
         <tr class="highlight-row">
           <td><strong>EVO-T gap</strong></td>
           <td colspan="4" style="color:var(--accent); font-family:var(--mono); font-size:12px; letter-spacing:0.05em;">
-            600 km/h cruise · Zero runway · GPS-denied navigation · Sovereign Japanese IP · Renewable propulsion roadmap
+            600 km/h cruise · Zero runway · GPS-denied navigation (design targets)
           </td>
         </tr>
       </tbody>
@@ -452,141 +355,46 @@
 
 <!-- TECHNOLOGY -->
 <section id="technology">
-  <div class="section-tag" data-lang-key="tech-tag">Core IP</div>
+  <div class="section-tag" data-lang-key="tech-tag">Core Technology</div>
   <h2 data-lang-key="tech-h2">Three technologies.<br>One integrated moat.</h2>
-  <p data-lang-key="tech-body" class="section-lead">
-    Each technology is co-designed with the others. The NDI control law is tuned to this specific airframe. The navigation system feeds into the same EKF that underpins NDI. Neither works at full capability without the other.
-  </p>
+  <p data-lang-key="tech-body" class="section-lead">Each technology is co-designed with the others. The control software is tuned to this specific airframe, and the navigation system feeds the same state estimator that underpins it. Neither works at full capability without the other.</p>
 
   <div class="tech-grid">
     <div class="tech-card">
-      <div style="margin-bottom:16px;"><span class="badge badge-proven" style="margin-bottom:8px;display:inline-block;">★ CFD Validated</span></div>
-      <h3 data-lang-key="ndi-h3">NDI Transition Control</h3>
-      <p data-lang-key="ndi-desc" style="margin-top:8px;">Non-linear Dynamic Inversion managing EDF-to-jet transition in a statically unstable BWB airframe. The CFD-confirmed instability (Cm_α = +0.415/rad) is the engineering challenge nobody else is solving.</p>
+      <div style="margin-bottom:16px;"><span class="badge badge-proven" style="margin-bottom:8px;display:inline-block;">★ CFD Analysis Complete</span></div>
+      <h3 data-lang-key="ndi-h3">Transition Control</h3>
+      <p data-lang-key="ndi-desc" style="margin-top:8px;">Flight control software that manages the handover from fan-borne to jet-borne flight on a statically unstable blended wing body. The static instability confirmed by CFD is the core engineering challenge.</p>
       <div class="tech-metric">
-        <div class="metric-row">
-          <span class="metric-label">Cm_α (CFD OpenFOAM)</span>
-          <span class="metric-val proven">+0.415/rad ★</span>
-        </div>
-        <div class="metric-row">
-          <span class="metric-label">Cd (cruise, CFD)</span>
-          <span class="metric-val proven">0.065 ★</span>
-        </div>
-        <div class="metric-row">
-          <span class="metric-label">Control frequency target</span>
-          <span class="metric-val target">400 Hz ◎</span>
-        </div>
-        <div class="metric-row">
-          <span class="metric-label">Fault recovery target</span>
-          <span class="metric-val target">&lt;500 ms ◎</span>
-        </div>
-        <div class="metric-row">
-          <span class="metric-label">Patent</span>
-          <span class="metric-val target">NTK-2026-NDI-001 ◎</span>
-        </div>
+        <div class="metric-row"><span class="metric-label">CFD analysis (OpenFOAM)</span><span class="metric-val proven">Complete ★</span></div>
+        <div class="metric-row"><span class="metric-label">Control frequency target</span><span class="metric-val target">400 Hz ◎</span></div>
+        <div class="metric-row"><span class="metric-label">Fault recovery target</span><span class="metric-val target">&lt;500 ms ◎</span></div>
       </div>
     </div>
 
     <div class="tech-card">
-      <div style="margin-bottom:16px;"><span class="badge badge-target" style="margin-bottom:8px;display:inline-block;">◎ DTSU Development Target</span></div>
+      <div style="margin-bottom:16px;"><span class="badge badge-target" style="margin-bottom:8px;display:inline-block;">◎ Development Target</span></div>
       <h3 data-lang-key="nav-h3">GPS-Denied Navigation</h3>
       <p data-lang-key="nav-desc" style="margin-top:8px;">Three-layer sensor fusion via Extended Kalman Filter. Natural surface feature signatures + semantic landmark detection + laser depth array. Zero pre-installed infrastructure required.</p>
       <div class="tech-metric">
-        <div class="metric-row">
-          <span class="metric-label">Laser altitude (VL53L1X)</span>
-          <span class="metric-val proven">±1 mm sensor ★</span>
-        </div>
-        <div class="metric-row">
-          <span class="metric-label">Vertical precision target</span>
-          <span class="metric-val target">±2 cm ◎</span>
-        </div>
-        <div class="metric-row">
-          <span class="metric-label">Horizontal @anchor target</span>
-          <span class="metric-val target">±5 cm ◎</span>
-        </div>
-        <div class="metric-row">
-          <span class="metric-label">Infrastructure required</span>
-          <span class="metric-val proven">Zero ★</span>
-        </div>
-        <div class="metric-row">
-          <span class="metric-label">Patent</span>
-          <span class="metric-val target">NTK-2026-NAV-006 ◎</span>
-        </div>
+        <div class="metric-row"><span class="metric-label">Laser altitude (VL53L1X)</span><span class="metric-val proven">±1 mm sensor ★</span></div>
+        <div class="metric-row"><span class="metric-label">Vertical precision target</span><span class="metric-val target">±2 cm ◎</span></div>
+        <div class="metric-row"><span class="metric-label">Horizontal @anchor target</span><span class="metric-val target">±5 cm ◎</span></div>
+        <div class="metric-row"><span class="metric-label">Infrastructure required</span><span class="metric-val proven">Zero ★</span></div>
       </div>
     </div>
 
     <div class="tech-card">
-      <div style="margin-bottom:16px;"><span class="badge badge-target" style="margin-bottom:8px;display:inline-block;">◎ In Preparation</span></div>
+      <div style="margin-bottom:16px;"><span class="badge badge-target" style="margin-bottom:8px;display:inline-block;">◎ Design Basis</span></div>
       <h3 data-lang-key="prop-h3">Propulsion Architecture</h3>
-      <p data-lang-key="prop-phase1-desc" style="margin-top:8px;">Phase 1: AMT Nike microturbojet + 6×EDF hybrid. Phase 3 (research): Al-B solid composite fuel rod — patent application in preparation. Staged de-risking separates research risk from execution risk.</p>
+      <p data-lang-key="prop-phase1-desc" style="margin-top:8px;">PBS-class microturbojets provide cruise thrust on the full-scale aircraft, and six electric ducted fans provide vertical lift. Off-the-shelf engine class, with no new engine development.</p>
       <div class="tech-metric">
-        <div class="metric-row">
-          <span class="metric-label">Phase 1 — AMT Nike</span>
-          <span class="metric-val proven">200N thrust ★</span>
-        </div>
-        <div class="metric-row">
-          <span class="metric-label">Phase 1 — EDF ×6</span>
-          <span class="metric-val proven">T/W 1.8–2.2 ★</span>
-        </div>
-        <div class="metric-row">
-          <span class="metric-label">Phase 3 energy density (theory)</span>
-          <span class="metric-val roadmap">210 MJ/L ○</span>
-        </div>
-        <div class="metric-row">
-          <span class="metric-label">Phase 3 vs Jet-A (theory)</span>
-          <span class="metric-val roadmap">6.1× ○</span>
-        </div>
-        <div class="metric-row">
-          <span class="metric-label">Patent (Phase 3 concept)</span>
-          <span class="metric-val target">NTK-2026-PROP-005 ◎</span>
-        </div>
+        <div class="metric-row"><span class="metric-label">Cruise thrust (full scale)</span><span class="metric-val target">PBS-class turbojets ◎</span></div>
+        <div class="metric-row"><span class="metric-label">Vertical lift</span><span class="metric-val target">6× EDF ◎</span></div>
+        <div class="metric-row"><span class="metric-label">EDF thrust/weight (design)</span><span class="metric-val target">1.8–2.2 ◎</span></div>
       </div>
     </div>
   </div>
 </section>
-
-<div class="divider"></div>
-
-<!-- PROPULSION -->
-<div id="propulsion" class="full-bleed" style="background:var(--deep);">
-  <div class="inner">
-    <div class="section-tag" data-lang-key="prop-tag">Propulsion Strategy</div>
-    <h2 data-lang-key="prop-h2">Staged. De-risked.<br>Patented long-term.</h2>
-    <p class="section-lead" data-lang-key="prop-lead">
-      EVO-T v1 uses proven jet propulsion today. The solid metal composite fuel system is a separately-tracked research program — patent application in preparation, to be integrated in v3. Research risk and execution risk do not share the same timeline.
-    </p>
-
-    <div class="prop-grid">
-      <div class="prop-now">
-        <span class="badge badge-proven" style="margin-bottom:14px;display:inline-block;">★ Current Program — EVO-T v1</span>
-        <h3 data-lang-key="prop-now-h3">AMT Nike Microturbojet + 6× EDF</h3>
-        <p data-lang-key="prop-now-desc">Proven off-the-shelf components. AMT Nike is a certified microturbojet with known performance characteristics. Six EDF units provide vertical lift and transition assist. NDI software manages the handover between both thrust sources.</p>
-        <div class="prop-specs">
-          <div class="spec-row"><span class="spec-key">Turbojet thrust</span><span class="spec-val">200 N (AMT Nike, proven)</span></div>
-          <div class="spec-row"><span class="spec-key">EDF thrust/weight</span><span class="spec-val">1.80–2.22 (design)</span></div>
-          <div class="spec-row"><span class="spec-key">Fuel</span><span class="spec-val">Jet-A (standard supply chain)</span></div>
-          <div class="spec-row"><span class="spec-key">PoC MTOW</span><span class="spec-val">1,650 kg (target)</span></div>
-          <div class="spec-row"><span class="spec-key">Development risk</span><span class="spec-val">Low — proven components</span></div>
-        </div>
-      </div>
-
-      <div class="prop-future">
-        <span class="badge badge-roadmap" style="margin-bottom:14px;display:inline-block;">○ Phase 3 Research — EVO-T v3+</span>
-        <h3 data-lang-key="alb-h3">Al-B Solid Composite Fuel Rod</h3>
-        <p data-lang-key="alb-conf">Details available upon request under NDA.</p>
-        <div style="margin-top:20px;padding:20px 24px;border:1px solid rgba(255,179,71,0.25);background:rgba(255,179,71,0.04);">
-          <p style="font-family:var(--mono);font-size:11px;color:var(--amber);letter-spacing:0.1em;text-transform:uppercase;margin:0;">
-            ○ Confidential — available upon request
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-      </div>
-    </div>
-  </div>
-</div>
 
 <div class="divider"></div>
 
@@ -598,28 +406,22 @@
   <div class="moat-grid">
     <div class="moat-card">
       <h3 data-lang-key="moat1-h3">Copy the BWB airframe</h3>
-      <p data-lang-key="moat1-desc">Without the NDI control law specifically tuned to Cm_α = +0.415/rad on this airframe geometry, the aircraft is aerodynamically uncontrollable.</p>
+      <p data-lang-key="moat1-desc">Without control software tuned to this airframe's instability, the aircraft is aerodynamically uncontrollable.</p>
       <div class="verdict" data-lang-key="moat1-v">Result → unflyable</div>
     </div>
     <div class="moat-card">
-      <h3 data-lang-key="moat2-h3">Copy the NDI software</h3>
-      <p data-lang-key="moat2-desc">Tuned to specific aerodynamic coefficients validated by OpenFOAM CFD on EVO-T's geometry. Zero transferability to a different airframe without repeating the full design loop.</p>
+      <h3 data-lang-key="moat2-h3">Copy the control software</h3>
+      <p data-lang-key="moat2-desc">Tuned to specific aerodynamic coefficients validated by OpenFOAM CFD on EVO-T's geometry. No transferability to another airframe without repeating the full design loop.</p>
       <div class="verdict" data-lang-key="moat2-v">Result → non-functional</div>
     </div>
     <div class="moat-card">
       <h3 data-lang-key="moat3-h3">Build GPS-denied navigation</h3>
-      <p data-lang-key="moat3-desc">Without integration as a position measurement update in the NDI Extended Kalman Filter, it remains an instrument display — not a flight control input.</p>
+      <p data-lang-key="moat3-desc">Without integration as a position measurement in the flight controller's state estimator, it remains an instrument display — not a flight control input.</p>
       <div class="verdict" data-lang-key="moat3-v">Result → fragmented</div>
-    </div>
-    <div class="moat-card">
-      <h3 data-lang-key="moat4-h3">File a competing propulsion patent</h3>
-      <p data-lang-key="moat4-desc">Patent application NTK-2026-PROP-005 (in preparation) covers the specific tribological feed mechanism, dual-axis throttle equation, voice coil actuation, and NDI integration claims.</p>
-      <div class="verdict" data-lang-key="moat4-v">Result → blocked</div>
     </div>
     <div class="moat-card full">
       <h3 data-lang-key="moat5-h3">Integrate all three from scratch</h3>
-      <p data-lang-key="moat5-desc">Requires the same iterative loop of CFD aerodynamic modelling → NDI control design → sensor fusion architecture → physical HIL testing that Tokyo Dynamics has been executing since 2021. The aerodynamic model, control law, and sensor fusion architecture cannot be purchased or downloaded.</p>
-      <div class="verdict" data-lang-key="moat5-v">Estimated replication time: 10–15 years</div>
+      <p data-lang-key="moat5-desc">Requires the same iterative loop of CFD aerodynamic modelling → control design → sensor fusion → hardware-in-the-loop testing that Tokyo Dynamics has been executing since 2021. The aerodynamic model, control software and sensor fusion cannot be purchased or downloaded.</p>
     </div>
   </div>
 </section>
@@ -629,30 +431,30 @@
 <!-- MARKET -->
 <div id="market" class="full-bleed" style="background:var(--deep);">
   <div class="inner">
-    <div class="section-tag" data-lang-key="market-tag">Market</div>
-    <h2 data-lang-key="market-h2">The customer exists today.<br>The product does not.</h2>
-    <p class="section-lead" data-lang-key="market-lead">Defense and spaceport customers have funded procurement requirements that no existing aircraft can meet. This is not a market to create — it is a market waiting for a product.</p>
+    <div class="section-tag" data-lang-key="market-tag">Applications</div>
+    <h2 data-lang-key="market-h2">Three applications.<br>One aircraft.</h2>
+    <p class="section-lead" data-lang-key="market-lead">Emergency response comes first, then defence, with civil logistics and medical later, once flight records support certification. Defence scope is transport, reconnaissance and ground-robot deployment — no weapons.</p>
     <div class="market-grid">
       <div class="market-card">
-        <span class="market-tag">Initial Market · Defense</span>
-        <h3 data-lang-key="market1-h3">Japan MOD / ATLA</h3>
-        <p data-lang-key="market1-desc">6,800-island defense perimeter. No sovereign high-speed autonomous VTOL platform for GPS-denied contested environments. ATLA submission already under ministry review.</p>
-        <div class="market-size">¥460B</div>
-        <div class="market-size-label"><span data-lang-key="mkt1-size-lbl">Estimated program size</span></div>
+        <span class="market-tag" data-lang-key="mk1-tag">First · Emergency Response</span>
+        <h3 data-lang-key="market1-h3">Disaster relief, rescue, medical supply</h3>
+        <p data-lang-key="market1-desc">When roads are cut and sea and air routes are limited by weather and terrain, as in the 2024 Noto earthquake. Expected customers: SDF (disaster relief), municipalities, fire services, police, Coast Guard.</p>
+        <div class="market-size">01</div>
+        <div class="market-size-label"><span data-lang-key="mkt1-size-lbl">Priority order</span></div>
       </div>
       <div class="market-card">
-        <span class="market-tag">Adjacent · Space Logistics</span>
-        <h3 data-lang-key="market2-h3">JAXA / Spaceport Ops</h3>
-        <p data-lang-key="market2-desc">Inter-facility logistics between Tanegashima, Hokkaido, and support sites. High-speed autonomous transport for critical components where current helicopters are too slow.</p>
-        <div class="market-size">Growing</div>
-        <div class="market-size-label"><span data-lang-key="mkt2-size-lbl">Space launch support</span></div>
+        <span class="market-tag" data-lang-key="mk2-tag">Second · Defence</span>
+        <h3 data-lang-key="market2-h3">Transport, reconnaissance, robot deployment</h3>
+        <p data-lang-key="market2-desc">Low-altitude, high-speed, GPS-independent flight, starting with island logistics support. Japan's Self-Defense Forces met only 51% of their FY2023 recruitment plan, a record low.</p>
+        <div class="market-size">02</div>
+        <div class="market-size-label"><span data-lang-key="mkt2-size-lbl">Priority order</span></div>
       </div>
       <div class="market-card">
-        <span class="market-tag">Long-term Vision · 2035+</span>
-        <h3 data-lang-key="market3-h3">Personal Air Mobility</h3>
-        <p data-lang-key="market3-desc">Every technical barrier between today and affordable personal air mobility — autonomous control, GPS-denied nav, energy density, runway-free landing — is what EVO-T proves first for defense.</p>
-        <div class="market-size">$1T+</div>
-        <div class="market-size-label"><span data-lang-key="mkt3-size-lbl">Long-term addressable</span></div>
+        <span class="market-tag" data-lang-key="mk3-tag">Later · Civil</span>
+        <h3 data-lang-key="market3-h3">Civil logistics and medical</h3>
+        <p data-lang-key="market3-desc">Time-critical medical supply and remote delivery, once flight records support civil certification.</p>
+        <div class="market-size">03</div>
+        <div class="market-size-label"><span data-lang-key="mkt3-size-lbl">Priority order</span></div>
       </div>
     </div>
   </div>
@@ -664,51 +466,51 @@
 <section id="roadmap">
   <div class="section-tag" data-lang-key="road-tag">Roadmap</div>
   <h2 data-lang-key="road-h2">Staged execution.<br>Each phase funded before the next.</h2>
-  <p class="section-lead" data-lang-key="road-lead">Research risk (Al-B propulsion) and execution risk (EVO-T platform) are separated and progress on independent timelines.</p>
+  <p class="section-lead" data-lang-key="road-lead">Each phase is unlocked by the results, and the funding, of the one before it.</p>
   <div class="timeline">
     <div class="tl-item">
-      <div class="tl-year">2021 Jan</div>
+      <div class="tl-year">2021 –</div>
       <div class="tl-dot active"></div>
       <div class="tl-content">
         <h3 data-lang-key="road1-h3">Foundation — Self-funded</h3>
-        <p data-lang-key="road1-desc">BWB concept design. OpenFOAM CFD complete (all configurations). NDI SIL development underway. ATLA formal submission. Patent applications in preparation. Company established.</p>
-        <span class="badge badge-proven">★ In Progress / Complete</span>
+        <p data-lang-key="road1-desc">Blended wing body concept design. OpenFOAM CFD complete across configurations. Flight-control simulation running. ATLA proposal submitted. Company established.</p>
+        <span class="badge badge-proven">★ Complete / ongoing</span>
       </div>
     </div>
     <div class="tl-item">
-      <div class="tl-year">2026 Jan – 2027 mid</div>
+      <div class="tl-year">2026 Oct –</div>
       <div class="tl-dot active"></div>
       <div class="tl-content">
-        <h3 data-lang-key="road2-h3">DTSU STS Phase — 70 cm PoC</h3>
-        <p data-lang-key="road2-desc">NDI HIL verification on Matek flight controller. GPS-denied autonomous landing demonstration. Physical proof of core NDI + navigation claims. TRL 3 → 5. ATLA technical proposal engagement.</p>
-        <span class="badge badge-target">◎ DTSU Application Ready</span>
+        <h3 data-lang-key="road2-h3">50 cm Prototype — Test Campaign</h3>
+        <p data-lang-key="road2-desc">4-fan bench fire test complete. 3D-printed 50 cm aircraft in build, fans going to six. Takeoff and landing tests from October; GPS-denied flight and fault-recovery tests from November.</p>
+        <span class="badge badge-target">◎ Building now</span>
       </div>
     </div>
     <div class="tl-item">
-      <div class="tl-year">2027 mid – 2028</div>
+      <div class="tl-year">2027</div>
       <div class="tl-dot"></div>
       <div class="tl-content">
-        <h3 data-lang-key="road3-h3">Series A — Alpha-1 (1/3 scale)</h3>
-        <p data-lang-key="road3-desc">Alpha-1 free flight with AMT Nike + EDF hybrid. ATLA formal procurement engagement. Spaceport LOI. Koray full-time. Team expansion to 10–15.</p>
-        <span class="badge badge-target">◎ Target: ¥300–500M — within 1 year of PoC</span>
+        <h3 data-lang-key="road3-h3">Jet Engines, Larger Aircraft, Test Fields</h3>
+        <p data-lang-key="road3-desc">Procure PBS-class jet engines. Build a larger test aircraft to measure cruise thrust, low-altitude high-speed flight and real payload. Secure test fields and the permissions to use them.</p>
+        <span class="badge badge-target">◎ Funding-dependent</span>
       </div>
     </div>
     <div class="tl-item">
-      <div class="tl-year">2028 – 2031</div>
+      <div class="tl-year">2028 Q1 –</div>
       <div class="tl-dot future"></div>
       <div class="tl-content">
-        <h3 data-lang-key="road4-h3">Full-scale Platform (1,650 kg MTOW)</h3>
-        <p data-lang-key="road4-desc">Full-scale vehicle with hydrogen-compatible propulsion upgrade. JCAB/MoD certification track. Defense procurement contracts. Commercial spaceport operations begin.</p>
-        <span class="badge badge-roadmap">○ Series B / IPO</span>
+        <h3 data-lang-key="road4-h3">Full-Scale Prototype Tests</h3>
+        <p data-lang-key="road4-desc">Full-scale prototype tests begin in Q1 2028. Targets: about 600 km/h cruise, 500 km or more, payload of hundreds of kg. Certification groundwork with government and defence customers first.</p>
+        <span class="badge badge-roadmap">○ Funding-dependent</span>
       </div>
     </div>
     <div class="tl-item">
-      <div class="tl-year">2030+</div>
+      <div class="tl-year">2029 –</div>
       <div class="tl-dot future"></div>
       <div class="tl-content">
-        <h3 data-lang-key="road5-h3">Al-B Solid Metal Propulsion Integration</h3>
-        <p data-lang-key="road5-desc">Friable rod propulsion replaces turbojet if theoretical energy density advantage is experimentally validated. Pathway to personal air mobility opens if economics hold.</p>
-        <span class="badge badge-roadmap">○ Research Track — Not current program</span>
+        <h3 data-lang-key="road5-h3">Service Operations</h3>
+        <p data-lang-key="road5-desc">Tokyo Dynamics owns and operates the fleet under 5–10 year service contracts: emergency response and defence first, civil logistics and medical later. Aircraft are taken back and recycled at end of life.</p>
+        <span class="badge badge-roadmap">○ Planned</span>
       </div>
     </div>
   </div>
@@ -721,45 +523,45 @@
   <div class="inner">
     <div class="section-tag" data-lang-key="tract-tag">Proof Points</div>
     <h2 data-lang-key="tract-h2">What exists today.</h2>
-    <p data-lang-key="tract-lead" class="section-lead">We distinguish between what is proven, what is in progress, and what is a design target. Every claim here is backed by data or formal submission.</p>
+    <p data-lang-key="tract-lead" class="section-lead">We distinguish between what is proven, what is in progress, and what is a design target. Every claim here is backed by data or a formal submission.</p>
     <div class="traction-grid">
       <div class="traction-item">
         <div class="traction-icon">📐</div>
         <div class="traction-text">
           <h3 data-lang-key="tract1-h3">CFD Analysis Complete</h3>
-          <p data-lang-key="tract1-desc">OpenFOAM v2406. Full four-configuration analysis. Cd=0.065, Cl=0.150, CL_α=1.934/rad, Cm_α=+0.415/rad. Static instability confirmed — NDI requirement validated.</p>
+          <p data-lang-key="tract1-desc">OpenFOAM v2406 analysis of the sealed cruise configuration. Static pitch instability confirmed, which validates the need for active control. Further runs are planned.</p>
           <span class="badge badge-proven" style="margin-top:8px;display:inline-block;">★ Data Available</span>
         </div>
       </div>
       <div class="traction-item">
         <div class="traction-icon">🛡</div>
         <div class="traction-text">
-          <h3>Japan MOD ATLA Submission</h3>
-          <p data-lang-key="tract2-desc">Formal submission to Japan Defense Acquisition, Technology and Logistics Agency. Under ministry review as of 2026.</p>
+          <h3 data-lang-key="tract2-h3">Japan MOD ATLA Proposal Submitted</h3>
+          <p data-lang-key="tract2-desc">Formal proposal submitted to the Acquisition, Technology & Logistics Agency.</p>
           <span class="badge badge-proven" style="margin-top:8px;display:inline-block;">★ Submitted</span>
         </div>
       </div>
       <div class="traction-item">
         <div class="traction-icon">⚡</div>
         <div class="traction-text">
-          <h3 data-lang-key="tract3-h3">Patent NTK-2026-PROP-005</h3>
-          <p data-lang-key="tract3-desc">Friable rod solid metal composite propulsion. Tribological feed mechanism, dual-axis throttle, multi-mode operation. JPO application in progress July 2026.</p>
-          <span class="badge badge-target" style="margin-top:8px;display:inline-block;">◎ In Preparation</span>
+          <h3 data-lang-key="tract3-h3">4-Fan Bench Fire Test Complete</h3>
+          <p data-lang-key="tract3-desc">Four electric ducted fans run together on our own control software. All units normal.</p>
+          <span class="badge badge-proven" style="margin-top:8px;display:inline-block;">★ Complete</span>
         </div>
       </div>
       <div class="traction-item">
         <div class="traction-icon">💻</div>
         <div class="traction-text">
-          <h3 data-lang-key="tract4-h3">NDI SIL Environment Running</h3>
-          <p data-lang-key="tract4-desc">ArduPilot SITL + JSBSim simulation. Python NDI control law implemented. 3-mode operation (hover/fault/transition) running in simulation. Hardware integration next.</p>
+          <h3 data-lang-key="tract4-h3">Flight Control Simulation Running</h3>
+          <p data-lang-key="tract4-desc">ArduPilot SITL + JSBSim simulation. Python control law implemented. Hover, fault and transition modes running in simulation. Hardware integration next.</p>
           <span class="badge badge-target" style="margin-top:8px;display:inline-block;">◎ SIL Complete, HIL Next</span>
         </div>
       </div>
       <div class="traction-item">
         <div class="traction-icon">🔧</div>
         <div class="traction-text">
-          <h3 data-lang-key="tract5-h3">70 cm PoC Prototype — In Build</h3>
-          <p data-lang-key="tract5-desc">6× EDF components ordered. Matek flight controller selected. 3D design in progress. Physical demonstrations of NDI, GPS-denied landing, and fault recovery targeted August 2026.</p>
+          <h3 data-lang-key="tract5-h3">50 cm Test Aircraft — In Build</h3>
+          <p data-lang-key="tract5-desc">3D-printed airframe in build; fans going from four to six (motors on order). Takeoff and landing tests from October, GPS-denied flight and fault-recovery tests from November.</p>
           <span class="badge badge-target" style="margin-top:8px;display:inline-block;">◎ Building Now</span>
         </div>
       </div>
@@ -772,59 +574,58 @@
 <!-- BUSINESS MODEL -->
 <section id="business">
   <div class="section-tag" data-lang-key="biz-tag">Business Model</div>
-  <h2 data-lang-key="biz-h2">Break-even: 20 units.<br>One defense contract.</h2>
-  <p class="section-lead" data-lang-key="biz-lead">
-    Four revenue streams across defense, logistics, and infrastructure — each at different margins and timescales. Defense unit sales anchor the model; SaaS and MaaS compound over time.
-  </p>
+  <h2 data-lang-key="biz-h2">Customers buy capability,<br>not aircraft.</h2>
+  <p class="section-lead" data-lang-key="biz-lead">We own and operate the fleet. Customers sign long-term service contracts and get the mission capability, without carrying maintenance, approvals or disposal.</p>
 
-  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-bottom:32px;">
-    <div style="background:var(--surface);padding:28px 22px;border-top:2px solid var(--accent);">
-      <div style="font-family:var(--mono);font-size:10px;color:var(--accent);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:14px;">機体販売<br>Unit Sales</div>
-      <div style="font-family:var(--mono);font-size:18px;font-weight:700;color:var(--white);margin-bottom:6px;">¥120M</div>
-      <div style="font-size:11px;color:var(--muted);margin-bottom:14px;">$800K per unit</div>
-      <div style="font-size:12px;color:var(--green);font-weight:600;margin-bottom:8px;">62% gross margin</div>
-      <div style="font-size:11px;color:var(--muted);border-top:1px solid var(--border);padding-top:10px;">Defense procurement</div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-bottom:2px;" class="biz-grid">
+    <div style="background:var(--surface);padding:32px 26px;border-top:2px solid var(--accent);">
+      <div data-lang-key="biz-c1-t" style="font-family:var(--mono);font-size:10px;color:var(--accent);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:14px;">Own & Operate</div>
+      <div data-lang-key="biz-c1-h" style="font-size:18px;font-weight:700;color:var(--white);margin-bottom:10px;">We own the fleet</div>
+      <div data-lang-key="biz-c1-d" style="font-size:13px;color:var(--muted);line-height:1.6;">Tokyo Dynamics owns the aircraft and handles operations, maintenance and approvals.</div>
     </div>
-    <div style="background:var(--surface);padding:28px 22px;border-top:2px solid var(--accent);">
-      <div style="font-family:var(--mono);font-size:10px;color:var(--accent);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:14px;">MaaS課金<br>Mission-as-a-Service</div>
-      <div style="font-family:var(--mono);font-size:18px;font-weight:700;color:var(--white);margin-bottom:6px;">$15/kg</div>
-      <div style="font-size:11px;color:var(--muted);margin-bottom:14px;">per 500 km</div>
-      <div style="font-size:12px;color:var(--green);font-weight:600;margin-bottom:8px;">55% gross margin</div>
-      <div style="font-size:11px;color:var(--muted);border-top:1px solid var(--border);padding-top:10px;">Per-flight billing</div>
+    <div style="background:var(--surface);padding:32px 26px;border-top:2px solid var(--accent);">
+      <div data-lang-key="biz-c2-t" style="font-family:var(--mono);font-size:10px;color:var(--accent);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:14px;">Long-Term Service</div>
+      <div data-lang-key="biz-c2-h" style="font-size:18px;font-weight:700;color:var(--white);margin-bottom:10px;">5–10 year contracts</div>
+      <div data-lang-key="biz-c2-d" style="font-size:13px;color:var(--muted);line-height:1.6;">Readiness in normal times and rapid deployment in emergencies, under one service contract.</div>
     </div>
-    <div style="background:var(--surface);padding:28px 22px;border-top:2px solid var(--accent);">
-      <div style="font-family:var(--mono);font-size:10px;color:var(--accent);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:14px;">VベースSaaS<br>V-Base SaaS</div>
-      <div style="font-family:var(--mono);font-size:18px;font-weight:700;color:var(--white);margin-bottom:6px;">¥15M</div>
-      <div style="font-size:11px;color:var(--muted);margin-bottom:14px;">+ 15% annual</div>
-      <div style="font-size:12px;color:var(--green);font-weight:600;margin-bottom:8px;">70%+ gross margin</div>
-      <div style="font-size:11px;color:var(--muted);border-top:1px solid var(--border);padding-top:10px;">Infrastructure software</div>
-    </div>
-    <div style="background:var(--surface);padding:28px 22px;border-top:2px solid var(--accent);">
-      <div style="font-family:var(--mono);font-size:10px;color:var(--accent);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:14px;">フリートリース<br>Fleet Leasing</div>
-      <div style="font-family:var(--mono);font-size:18px;font-weight:700;color:var(--white);margin-bottom:6px;">Gov contract</div>
-      <div style="font-size:11px;color:var(--muted);margin-bottom:14px;">Monthly recurring</div>
-      <div style="font-size:12px;color:var(--green);font-weight:600;margin-bottom:8px;">40% gross margin</div>
-      <div style="font-size:11px;color:var(--muted);border-top:1px solid var(--border);padding-top:10px;">Managed fleet</div>
+    <div style="background:var(--surface);padding:32px 26px;border-top:2px solid var(--accent);">
+      <div data-lang-key="biz-c3-t" style="font-family:var(--mono);font-size:10px;color:var(--accent);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:14px;">Take-Back & Recycling</div>
+      <div data-lang-key="biz-c3-h" style="font-size:18px;font-weight:700;color:var(--white);margin-bottom:10px;">End-of-life handled by us</div>
+      <div data-lang-key="biz-c3-d" style="font-size:13px;color:var(--muted);line-height:1.6;">We take the aircraft back and build material reuse into the business. End-of-life cost is priced in.</div>
     </div>
   </div>
 
-  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-bottom:24px;">
-    <div style="background:var(--surface);padding:28px;text-align:center;">
-      <div style="font-family:var(--mono);font-size:32px;font-weight:700;color:var(--green);margin-bottom:6px;">20機</div>
-      <div style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;">損益分岐 / Break-even</div>
+  <div style="margin:40px 0 24px;">
+    <div data-lang-key="bn-h" style="font-family:var(--mono);font-size:11px;color:var(--accent);letter-spacing:0.14em;text-transform:uppercase;margin-bottom:14px;">Planning estimates: what a mission costs</div>
+    <div class="bn-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-bottom:2px;">
+    <div style="background:var(--surface);padding:24px 22px;">
+      <div data-lang-key="bn-s1v" style="font-family:var(--mono);font-size:24px;font-weight:700;color:var(--white);margin-bottom:8px;">¥200–580k</div>
+      <div data-lang-key="bn-s1l" style="font-size:12px;color:var(--muted);line-height:1.5;">per flight hour (about $1,400–3,900)</div>
     </div>
-    <div style="background:var(--surface);padding:28px;text-align:center;">
-      <div style="font-family:var(--mono);font-size:32px;font-weight:700;color:var(--accent);margin-bottom:6px;">62%</div>
-      <div style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;">粗利率 / Gross margin</div>
+    <div style="background:var(--surface);padding:24px 22px;">
+      <div data-lang-key="bn-s2v" style="font-family:var(--mono);font-size:24px;font-weight:700;color:var(--white);margin-bottom:8px;">¥170–490k</div>
+      <div data-lang-key="bn-s2l" style="font-size:12px;color:var(--muted);line-height:1.5;">per 500 km mission, about 50 min</div>
     </div>
-    <div style="background:var(--surface);padding:28px;text-align:center;">
-      <div style="font-family:var(--mono);font-size:32px;font-weight:700;color:var(--amber);margin-bottom:6px;">¥186B</div>
-      <div style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;">Year 8 売上目標 / Revenue target</div>
+    <div style="background:var(--surface);padding:24px 22px;">
+      <div data-lang-key="bn-s3v" style="font-family:var(--mono);font-size:24px;font-weight:700;color:var(--white);margin-bottom:8px;">¥570–1,600</div>
+      <div data-lang-key="bn-s3l" style="font-size:12px;color:var(--muted);line-height:1.5;">per kg delivered, full payload over 500 km (about $4–11)</div>
     </div>
+    <div style="background:var(--surface);padding:24px 22px;">
+      <div data-lang-key="bn-s4v" style="font-family:var(--mono);font-size:24px;font-weight:700;color:var(--white);margin-bottom:8px;">¥1,100–3,200</div>
+      <div data-lang-key="bn-s4l" style="font-size:12px;color:var(--muted);line-height:1.5;">per kg at half payload</div>
+    </div>
+    </div>
+    <p data-lang-key="bn-drv" style="font-size:13px;color:var(--subtle);line-height:1.6;margin:16px 0 8px;">Biggest cost drivers: engine overhaul reserve (about 40%), fuel (about 15%), operations team (about 13%), aircraft depreciation (about 10%), maintenance (about 17%); insurance and recycling make up the rest.</p>
+    <p data-lang-key="bn-as" style="font-size:12px;color:var(--muted);line-height:1.6;margin-bottom:8px;">Assumptions: 300 kg payload; 500 km at about 600 km/h; aircraft cost ¥80–150M, written off over 10 years; 250–500 flight hours per year; jet fuel ¥160/kg; engine overhaul every 100–200 hours; no onboard crew; end-of-life take-back included; ¥150 = $1. The low and high figures correspond to the best and worst case of these assumptions.</p>
+    <p data-lang-key="bn-disc" style="font-size:12px;color:var(--amber);line-height:1.6;">These are planning estimates from our own assumptions, not quotations. We will replace them with measured figures from flight tests.</p>
+  </div>
+  <div style="background:rgba(0,184,255,0.05);border:1px solid rgba(0,184,255,0.25);padding:24px 28px;margin-bottom:24px;">
+    <div data-lang-key="biz-band" style="font-size:16px;font-weight:600;color:var(--accent);">Customers don't carry maintenance, approvals or disposal.</div>
+    <div data-lang-key="biz-direct" style="font-size:13px;color:var(--muted);margin-top:6px;">Direct sales may be offered later, once flight records are built, where a customer prefers to own.</div>
   </div>
 
   <p style="font-size:11px;color:var(--muted);font-style:italic;border-left:2px solid var(--dim);padding-left:12px;">
-    注：売上計画は予測値です。実際の結果は異なる場合があります。/ <span data-lang-key="biz-disc">Revenue projections are estimates. Actual results may differ materially.</span>
+    <span data-lang-key="biz-disc">Pricing and contract terms will be set with early customers.</span>
   </p>
 </section>
 
@@ -833,31 +634,28 @@
 <!-- ASK -->
 <section id="ask">
   <div class="section-tag" data-lang-key="ask-tag">Investment Opportunity</div>
-  <h2 data-lang-key="ask-h2">Two asks.<br>One aligned interest.</h2>
-  <p class="section-lead" data-lang-key="ask-lead">We are approaching leading deep tech VCs for NEDO DTSU co-submission partnership and bridge seed capital. Both asks serve the same goal: getting EVO-T from SIL to physical demonstration.</p>
+  <h2 data-lang-key="ask-h2">Funding that takes us<br>from tests to full scale.</h2>
+  <p class="section-lead" data-lang-key="ask-lead">Whether it comes as a grant, venture investment or a government programme, the funding serves one purpose: taking EVO-T from the 50 cm test aircraft to a full-scale prototype. The same plan supports all three applications — emergency response, defence and civil logistics.</p>
   <div class="ask-grid">
     <div class="ask-card primary">
       <div class="ask-num">01</div>
-      <h3 data-lang-key="ask1-h3">NEDO DTSU Round 10 Co-submission</h3>
-      <p data-lang-key="ask1-desc">DTSU requires a VC/CVC investment intention letter covering ≥1/3 of eligible costs. Subsidy up to ¥500M at 2/3 subsidy rate over 24 months. PoC prototype → TRL 5 is the deliverable.</p>
+      <h3 data-lang-key="ask1-h3">What funding enables</h3>
+      <p data-lang-key="ask1-desc">Moving from proof on a 50 cm aircraft to flight with real engines and real payload.</p>
       <ul class="ask-list">
-        <li>Investment intention letter to NEDO</li>
-        <li>STSフェーズ — up to ¥500M subsidy</li>
-        <li>24-month R&D to TRL 5</li>
-        <li>First right on Series A participation</li>
-        <li>Direct access to ATLA procurement pipeline</li>
+        <li data-lang-key="ask-l1">Buy the jet engines</li>
+        <li data-lang-key="ask-l2">Build a full-scale prototype, with full-scale tests from Q1 2028</li>
+        <li data-lang-key="ask-l3">Secure test fields and the permissions to use them</li>
+        <li data-lang-key="ask-l4">Strengthen the development and test team</li>
       </ul>
     </div>
     <div class="ask-card primary">
       <div class="ask-num">02</div>
-      <h3 data-lang-key="ask2-h3">Bridge Seed — ¥3–5M (SAFE / Convertible Note)</h3>
-      <p data-lang-key="ask2-desc">DTSU subsidy is paid in arrears. A 6–9 month cash flow gap exists between adoption and first payment. Bridge capital enables prototype execution, patent filings, and operations that make the DTSU application defensible.</p>
+      <h3 data-lang-key="ask2-h3">How we work with partners</h3>
+      <p data-lang-key="ask2-desc">A staged plan in which every phase is reported with measured results.</p>
       <ul class="ask-list">
-        <li>¥1.2M — PoC prototype and demo testing</li>
-        <li>¥500K — 3 patent filings (NDI, NAV, PROP)</li>
-        <li>¥600K — Operations, meetings, IP costs</li>
-        <li>¥700K+ — Contingency buffer</li>
-        <li>Converts at discount to Series A</li>
+        <li data-lang-key="ask-l5">Each phase funded before the next</li>
+        <li data-lang-key="ask-l6">Results shown with measured data, video and logs</li>
+        <li data-lang-key="ask-l7">Target raise, valuation and terms: shared per application</li>
       </ul>
     </div>
   </div>
@@ -870,22 +668,22 @@
   <div class="inner">
     <div class="section-tag" data-lang-key="team-tag">Team</div>
     <h2 data-lang-key="team-h2">Built in Tokyo.<br>Shipped together.</h2>
-    <p class="section-lead" data-lang-key="team-lead">Three co-founders combining deep aerospace engineering, embedded AI systems, and global market development. Seven years of shared working history.</p>
+    <p class="section-lead" data-lang-key="team-lead">Three co-founders combining aerospace engineering, embedded AI systems and global market development. Seven years of shared working history.</p>
     <div class="team-grid">
       <div class="team-card">
-        <span class="team-role" data-lang-key="koray-role">CEO &amp; Co-Founder</span>
+        <span class="team-role" data-lang-key="koray-role">CEO & Co-Founder</span>
         <h3 data-lang-key="koray-h3">Ucuncu Koray</h3>
-        <p data-lang-key="koray-bio">MSc Materials &amp; Energy Science, Science Tokyo (former Tokyo Tech). Global R&amp;D Lead, Teraoka Seiko (current). 6+ years engineering &amp; business development at DIGI/TERAOKA. 10+ years mechatronics, robotics, and AI. Leads EVO-T aerodynamic design, CFRP/Ti composite structures, CFD workflow, and IP strategy.</p>
+        <p data-lang-key="koray-bio">MSc Materials & Energy Science, Science Tokyo. 6+ years in engineering and business development at DIGI/TERAOKA (mechatronics, robotics, aerospace). Leads vision, aerodynamic design, composite structures, CFD workflow and fundraising.</p>
       </div>
       <div class="team-card">
-        <span class="team-role" data-lang-key="gabriel-role">CTO &amp; Co-Founder</span>
+        <span class="team-role" data-lang-key="gabriel-role">CTO & Co-Founder</span>
         <h3 data-lang-key="gabriel-h3">Gabriel Peixoto</h3>
-        <p data-lang-key="gabriel-bio">PhD candidate, Intelligent Systems, Osaka University. MSc Computer Science (CV &amp; HCI). FPGA, DSP, GPU embedded systems specialist. 5 years AI robotics at Connected Robotics. Co-workers with Koray at Connected Robotics. Leads all real-time flight software: NDI control law, ArduPilot SIL/HIL, GPS-denied navigation, and Matek flight controller integration.</p>
+        <p data-lang-key="gabriel-bio">PhD candidate, Intelligent Systems, Osaka University; MSc Computer Science (CV & HCI). 5 years as Lead Robotics AI Engineer at Connected Robotics (FPGA, DSP, GPU embedded systems). Leads system architecture, real-time flight software, GPS-denied navigation and safety.</p>
       </div>
       <div class="team-card">
-        <span class="team-role" data-lang-key="cameron-role">CGO &amp; Co-Founder</span>
+        <span class="team-role" data-lang-key="cameron-role">CGO & Co-Founder</span>
         <h3 data-lang-key="cameron-h3">Cameron Clark</h3>
-        <p data-lang-key="cameron-bio">BA Arts Management + Japanese Studies, Ohio State University. Study abroad at International Christian University, Tokyo. Knows both co-founders personally for 7+ years. Leads brand strategy, investor relations, and international growth. Bridges Japanese defense and spaceport markets with global investor and partner networks.</p>
+        <p data-lang-key="cameron-bio">BA Arts Management & Japanese Studies, Ohio State University / International Christian University. 7+ years in international growth, strategy and cross-border business development. Leads commercialization, investor relations and go-to-market.</p>
       </div>
     </div>
     <div style="margin-top:2px;padding:18px 24px;background:var(--surface);border-left:2px solid var(--dim);font-size:12px;color:var(--muted);">
@@ -896,43 +694,9 @@
 
 <div class="divider"></div>
 
-<!-- PATENTS -->
-<section id="patents">
-  <div class="section-tag" data-lang-key="pat-tag">Intellectual Property</div>
-  <h2 data-lang-key="pat-h2">Three patents.<br>Three interlocking moats.</h2>
-  <div class="patent-list">
-    <div class="patent-item">
-      <div class="patent-ref">NTK-2026-PROP-005</div>
-      <div class="patent-title">
-        <h3>Friable Rod Solid Metal Composite Propulsion System</h3>
-        <p>摩擦脆性供給式多段モード金属複合燃料推進システム — Tribological abrasion feed, dual-axis throttle (ṁ = F × ω × κ × ρ), voice coil &lt;20ms, turbojet/ramjet/scramjet single-fuel, Al fuel cycle</p>
-      </div>
-      <span class="badge badge-target">◎ In Preparation</span>
-    </div>
-    <div class="patent-item">
-      <div class="patent-ref">NTK-2026-NAV-006</div>
-      <div class="patent-title">
-        <h3>GPS-Denied VTOL Autonomous Navigation System</h3>
-        <p>GPS非依存型VTOL自律航法システム — Natural feature angular signature encoding, altitude-normalized multi-scale extraction, 3-layer EKF fusion, 3D trajectory reconstruction</p>
-      </div>
-      <span class="badge badge-target">◎ Preparing — Aug 2026</span>
-    </div>
-    <div class="patent-item">
-      <div class="patent-ref">NTK-2026-NDI-001</div>
-      <div class="patent-title">
-        <h3>BWB-VTOL NDI Transition Control System</h3>
-        <p>BWB-VTOL NDI遷移制御システム — 400Hz heterogeneous multi-source thrust coordination for statically unstable BWB airframe, EDF-to-jet autonomous transition</p>
-      </div>
-      <span class="badge badge-target">◎ Preparing — DTSU period</span>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
 <footer>
-  <div class="footer-logo">TOKYO DYNAMICS KK · 東京ダイナミクス株式会社</div>
-  <div class="footer-copy">〒104-0031 東京都中央区京橋一丁目一番五号 &nbsp;·&nbsp; korayucuncu@icloud.com</div>
+  <div class="footer-logo">Tokyo Dynamics 株式会社</div>
+  <div class="footer-copy">〒104-0031 東京都中央区京橋一丁目一番五号 &nbsp;·&nbsp;</div>
   <div class="footer-conf">Confidential · For Investor Discussion Only · 2026</div>
 </footer>
 
@@ -948,7 +712,7 @@
   }, { threshold: 0.08 });
 
   document.querySelectorAll(
-    '.tech-card,.moat-card,.market-card,.traction-item,.ask-card,.team-card,.patent-item,.tl-item,.prop-now,.prop-future'
+    '.tech-card,.moat-card,.market-card,.traction-item,.ask-card,.team-card,.tl-item'
   ).forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(18px)';
@@ -956,26 +720,6 @@
     obs.observe(el);
   });
 
-  // Fuel bars animate on scroll
-  const fuelObs = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.querySelectorAll('.fuel-bar').forEach((bar, i) => {
-          const w = bar.dataset.width;
-          setTimeout(() => { bar.style.width = w; }, i * 200);
-        });
-      }
-    });
-  }, { threshold: 0.3 });
-
-  document.querySelectorAll('.fuel-bars').forEach(section => {
-    section.querySelectorAll('.fuel-bar').forEach(bar => {
-      bar.dataset.width = bar.style.width;
-      bar.style.width = '0%';
-      bar.style.transition = 'width 1.6s cubic-bezier(0.16,1,0.3,1)';
-    });
-    fuelObs.observe(section);
-  });
 </script>
 
 
@@ -985,138 +729,146 @@
   var lang = 'en';
 
   var data = {
-    'nav-gap':     ['The Gap','ギャップ'],
-    'nav-tech':    ['Technology','技術'],
-    'nav-prop':    ['Propulsion','推進'],
-    'nav-market':  ['Market','市場'],
-    'nav-roadmap': ['Roadmap','ロードマップ'],
-    'nav-business':['Business','事業'],
-    'nav-ask':     ['The Ask','提案'],
-    'nav-team':    ['Team','チーム'],
-    'hero-tag':    ['EVO-T — Deep Tech VTOL','EVO-T — ディープテックVTOL'],
-    'hero-h1a':    ['Beyond the','超える、'],
-    'hero-sub':    ['A Blended Wing Body hybrid-jet VTOL targeting 600 km/h cruise with zero runway dependency and GPS-denied autonomous navigation — engineered in Japan, for defense and spaceport logistics markets where no solution currently exists.','時速600km巡航・完全滑走路不要・GPS非依存精密航法を実現する世界初の自律ハイブリッドジェットVTOL。解決策が存在しない防衛・宇宙港物流市場のために日本で設計・開発。'],
-    'hero-disc':   ['★ = CFD-confirmed  |  ◎ = Design target  |  ○ = Research roadmap','★ = CFD実証済  |  ◎ = 設計目標  |  ○ = 研究ロードマップ'],
-    'legend-proven':['Proven','実証済'],
-    'legend-proven-desc':['Data exists today — CFD results, formal submissions, completed work','今日存在するデータ — CFD結果・正式提出・完了済み作業'],
-    'legend-target':['Target','目標'],
-    'legend-target-desc':['Design specification — to be validated during DTSU PoC program','設計仕様 — DTSUフェーズで検証予定'],
-    'legend-roadmap':['Roadmap','ロードマップ'],
-    'legend-roadmap-desc':['Future research track, theoretical / not the current product','将来の研究トラック — 理論段階。現在の製品ではない'],
-    'gap-tag':     ['The Problem','課題'],
-    'gap-h2':      ["Aviation's 70-year empty quadrant",'航空の70年間の空白象限'],
-    'gap-lead':    ['No aircraft today can take off vertically from an unprepared surface, cruise at jet speeds, and navigate autonomously without GPS. This gap has existed since the Wright Brothers.','今日、未整備の地点から垂直に離陸しジェット速度で巡航しGPSなしに自律航行できる航空機は世界に存在しない。このギャップはライト兄弟の時代から続いている。'],
-    'gap-stmt':    ['Between these two worlds — VTOL-capable at jet cruise speed — there is not a single operational aircraft anywhere in the world today.','この2つの世界の間——VTOL能力を持ちながらジェット巡航速度を実現——運用可能な航空機は世界に1機も存在しない。'],
-    'tech-tag':    ['Core IP','コアIP'],
-    'tech-h2':     ['Three technologies.<br>One integrated moat.','3つの技術。<br>統合されたモート。'],
-    'tech-lead':   ['Anyone can bolt jets onto a drone. What they get is a demonstration object — one that cannot manage the transition, cannot fly without GPS, and cannot carry useful range. EVO-T solves all three problems simultaneously with proprietary, patent-protected technology.','ドローンにジェットを取り付けることは誰でもできる。しかし得られるのは遷移を管理できずGPSなしでは飛べず実用航続距離を持たない「デモ用物体」だけだ。EVO-Tは独自の特許保護技術で3つの問題を同時に解決する。'],
-    'prop-tag':    ['Propulsion Strategy','推進戦略'],
-    'prop-h2':     ['Staged. De-risked.<br>Patented long-term.','段階的。リスク分散。<br>長期特許保護。'],
-    'prop-lead':   ['EVO-T v1 uses proven jet propulsion today. The solid metal composite fuel system is a separately-tracked research program — patent application in preparation, to be integrated in v3. Research risk and execution risk do not share the same timeline.','EVO-T v1は実証済みのジェット推進を使用。固体金属複合燃料システムは独立した研究プログラム——特許出願準備中、v3で統合予定。研究リスクと実行リスクは同じタイムラインを共有しない。'],
-    'moat-tag':    ['Competitive Moat','競争的堀'],
-    'moat-h2':     ['Copy one piece.<br>Get nothing.','1つをコピーしても<br>意味がない。'],
-    'moat-lead':   ['The three technologies are co-designed. No single component functions at full capability without the other two. The integration is the invention.','3つの技術は共同設計されている。どれか1つを単独でコピーしても他の2つなしでは完全な機能を発揮しない。統合こそが発明である。'],
-    'market-tag':  ['Market','市場'],
-    'market-h2':   ['The customer exists today.<br>The product does not.','顧客は今日存在する。<br>製品は存在しない。'],
-    'market-lead': ['Defense and spaceport customers have funded procurement requirements that no existing aircraft can meet. This is not a market to create — it is a market waiting for a product.','防衛・宇宙港の顧客は既存のいかなる航空機も満たすことができない調達要件に資金を充てている。これは創造すべき市場ではなく、製品を待っている市場だ。'],
-    'road-tag':    ['Roadmap','ロードマップ'],
-    'road-h2':     ['Staged execution.<br>Each phase funded before the next.','段階的実行。<br>各フェーズは次の前に資金調達。'],
-    'road-lead':   ['Research risk (Al-B propulsion) and execution risk (EVO-T platform) are separated and progress on independent timelines.','研究リスク（Al-B推進）と実行リスク（EVO-Tプラットフォーム）は分離され独立したタイムラインで進行する。'],
-    'biz-tag':     ['Business Model','ビジネスモデル'],
-    'biz-h2':      ['Break-even: 20 units.<br>One defense contract.','損益分岐点：20機。<br>防衛調達1契約。'],
-    'biz-lead':    ['Four revenue streams across defense, logistics, and infrastructure — each at different margins and timescales. Defense unit sales anchor the model; SaaS and MaaS compound over time.','防衛・物流・インフラにわたる4つの収益源——それぞれ異なるマージンとタイムスケール。防衛機体販売がモデルの基盤。SaaSとMaaSが時間とともに複利的に成長する。'],
-    'biz-disc':    ['Revenue projections are estimates. Actual results may differ materially.','売上計画は予測値です。実際の結果は大幅に異なる場合があります。'],
-    'ask-tag':     ['Investment Opportunity','投資機会'],
-    'ask-h2':      ['Two asks.<br>One aligned interest.','2つのご提案。<br>1つの利益の一致。'],
-    'ask-lead':    ['We are approaching leading deep tech VCs for NEDO DTSU co-submission partnership and bridge seed capital. Both asks serve the same goal: getting EVO-T from SIL to physical demonstration.','主要なディープテックVCに対しNEDO DTSU共同申請パートナーシップとブリッジシード資金についてご相談しています。両方の提案は同じ目標——EVO-TをSILから物理的実証へ——に向けたものです。'],
-    'team-tag':    ['Team','チーム'],
-    'team-h2':     ['Built in Tokyo.<br>Shipped together.','東京発。共に積み上げてきた。'],
-    'team-lead':   ['Three co-founders combining deep aerospace engineering, embedded AI systems, and global market development. Seven years of shared working history.','航空宇宙エンジニアリング・組込みAIシステム・グローバル市場開発を統合する3人の共同創業者。7年以上の共同業務経験。'],
-    'pat-tag':     ['Intellectual Property','知的財産'],
-    'pat-h2':      ['Three patents.<br>Three interlocking moats.','3件の特許。<br>3つの連動するモート。'],
-    // TECH SECTION BODY
-    'tech-body':   ['Each technology is co-designed with the others. The NDI control law is tuned to this specific airframe. The navigation system feeds into the same EKF that underpins NDI. Neither works at full capability without the other.','各技術は相互に共同設計されている。NDI制御則はこの特定の機体に合わせてチューニングされている。航法システムはNDIを支える同じEKFに入力される。どれか一つだけでは完全な能力を発揮できない。'],
-    // TECH CARD DESCRIPTIONS
-    'ndi-h3':      ['NDI Transition Control','NDI遷移制御'],
-    'ndi-desc':    ['Non-linear Dynamic Inversion managing EDF-to-jet transition in a statically unstable BWB airframe — a control problem that has no prior solution exists.','静的不安定BWB機体におけるEDF→ジェット遷移を管理する非線形動的逆制御。世界に先行解決例のない制御問題。'],
-    'nav-h3':      ['GPS-Denied Navigation','GPS非依存自律航法'],
-    'nav-desc':    ['Three-layer sensor fusion via Extended Kalman Filter. Natural surface feature signatures + semantic landmark detection + laser depth array. Zero pre-installed infrastructure required.','拡張カルマンフィルタによる3層センサーフュージョン。自然地物特徴量署名＋意味的ランドマーク認識＋レーザー深度アレイ。事前インフラ設置ゼロ。'],
-    'prop-h3':     ['Propulsion Architecture','推進アーキテクチャ'],
-    'prop-phase1-desc': ['Phase 1: AMT Nike microturbojet + 6×EDF hybrid. Phase 3 (research): Al-B solid composite fuel rod — patent application in preparation. Staged de-risking separates research risk from execution risk.','フェーズ1：AMT Nikeマイクロターボジェット＋6基EDF。フェーズ3（研究）：Al-B固体複合燃料ロッド——特許出願準備中。段階的リスク分散により研究リスクと実行リスクを分離。'],
-    // PROPULSION NOW/FUTURE
-    'prop-now-h3': ['AMT Nike Microturbojet + 6× EDF','AMT Nikeマイクロターボジェット＋6基EDF'],
-    'prop-now-desc':['Proven off-the-shelf components. AMT Nike is a certified microturbojet with known performance characteristics. Six EDF units provide vertical lift and transition assist. NDI software manages the handover between both thrust sources.','実証済みの既製コンポーネント。AMT Nikeは性能特性が確立された認証済みマイクロターボジェット。6基のEDFが垂直揚力と遷移支援を担う。NDIソフトウェアが両推力源間の切り替えを管理する。'],
-    'alb-h3':      ['Al-B Solid Composite Fuel Rod','Al-B固体複合燃料ロッド'],
-    'alb-conf':    ['Details available upon request under NDA.','詳細はNDA締結後にご提供します。'],
-    // MOAT
-    'moat1-h3':    ['Copy the BWB airframe','BWB機体形状をコピーする'],
-    'moat1-desc':  ['Without the NDI control law specifically tuned to Cm_α = +0.415/rad on this airframe geometry, the aircraft is aerodynamically uncontrollable.','この機体形状のCm_α=+0.415/radに特化してチューニングされたNDI制御則なしでは、機体は空力的に制御不能になる。'],
-    'moat1-v':     ['Result → unflyable','結果 → 飛行不能'],
-    'moat2-h3':    ['Copy the NDI software','NDIソフトウェアをコピーする'],
-    'moat2-desc':  ['Tuned to specific aerodynamic coefficients validated by OpenFOAM CFD on EVO-T geometry. Zero transferability to another airframe without repeating the full design loop.','EVO-T形状のOpenFOAM CFDで検証された特定空力係数にチューニング済み。フル設計ループを繰り返さなければ別機体への転用はゼロ。'],
-    'moat2-v':     ['Result → non-functional','結果 → 機能不全'],
-    'moat3-h3':    ['Build GPS-denied navigation','GPS非依存航法を開発する'],
-    'moat3-desc':  ['Without integration as a position measurement update in the NDI Extended Kalman Filter, it stays an instrument — not autonomous flight control.','NDI拡張カルマンフィルタへの位置計測更新として統合されなければ、計器表示に留まる——自律飛行制御にはならない。'],
-    'moat3-v':     ['Result → fragmented','結果 → 断片的'],
-    'moat4-h3':    ['File a competing propulsion patent','推進特許に対抗する'],
-    'moat4-desc':  ['Patent application NTK-2026-PROP-005 (in preparation) covers the specific tribological feed mechanism, dual-axis throttle equation, voice coil actuation, and NDI integration claims.','特許出願NTK-2026-PROP-005（準備中）は、特定の摩擦脆性供給機構、2軸スロットル方程式、ボイスコイル作動、NDI統合クレームをカバーする。'],
-    'moat4-v':     ['Result → blocked','結果 → ブロック'],
-    'moat5-h3':    ['Integrate all three from scratch','3技術すべてをゼロから統合する'],
-    'moat5-desc':  ['Requires the same iterative loop of CFD aerodynamic modelling → NDI control design → sensor fusion architecture → HIL testing we have been executing since 2021.','2021年から実行してきたCFD空力モデリング→NDI制御設計→センサーフュージョン→HIL検証の同一反復ループが必要。'],
-    'moat5-v':     ['Estimated replication time: 10–15 years','推定複製期間：10〜15年'],
-    // MARKET
-    'market1-h3':  ['Japan MOD / ATLA','防衛省ATLA'],
-    'market1-desc':['6,800-island defense perimeter. No sovereign high-speed autonomous VTOL platform for GPS-denied ops. ATLA submission under review.','6,800島の防衛ペリメーター。GPS遮断環境での高速自律VTOLは日本国産に存在しない。ATLA提出済み・審査中。'],
-    'mkt1-size-lbl':['Estimated program size','推定調達プログラム規模'],
-    'market2-h3':  ['JAXA / Spaceport Ops','JAXA・宇宙港'],
-    'market2-desc':['Inter-facility logistics between Tanegashima, Hokkaido, and support sites. High-speed autonomous transport for critical components where current helicopters are too slow.','種子島・大樹町・支援施設間の高速物資輸送。現行ヘリでは速度不足な重要部品の自律輸送。'],
-    'mkt2-size-lbl':['Space launch support','宇宙輸送支援'],
-    'market3-h3':  ['Personal Air Mobility','個人航空移動'],
-    'market3-desc':['Every technical barrier between today and affordable personal air mobility — autonomous control, GPS-denied nav, energy density, runway-free landing — is what EVO-T proves first for defense.','EVO-Tが防衛向けに証明するすべての技術が個人航空移動への技術的障壁と同一。自律制御・GPS非依存航法・エネルギー密度・滑走路不要着陸。'],
-    'mkt3-size-lbl':['Long-term addressable','長期アドレス可能市場'],
-    // ROADMAP
-    'road1-h3':    ['Foundation — Self-funded','基盤構築 — 自己資金'],
-    'road1-desc':  ['BWB concept design. OpenFOAM CFD complete (all configurations). NDI SIL development underway. ATLA formal submission. Patent applications in preparation. Company established.','BWB概念設計完了。OpenFOAM CFD完了（全形態）。NDI SIL開発中。ATLA正式提出。特許出願準備中。会社設立済み。'],
-    'road2-h3':    ['DTSU STS Phase — 70 cm PoC','DTSUフェーズ — 70cm PoC'],
-    'road2-desc':  ['NDI HIL verification on Matek flight controller. GPS-denied autonomous landing demonstration. Physical proof of core NDI + navigation claims. TRL 3 → 5. ATLA technical proposal engagement.','Matek飛行コントローラーでのNDI HIL検証。GPS非依存自律着陸実証。NDI・航法コア技術の物理的証明。TRL 3→5。ATLA技術提案参画。'],
-    'road3-h3':    ['Series A — Alpha-1 (1/3 scale)','Series A — Alpha-1（1/3スケール）'],
-    'road3-desc':  ['Alpha-1 free flight with AMT Nike + EDF hybrid. ATLA formal procurement engagement. Spaceport LOI. Koray full-time. Team expansion to 10–15.','AMT Nike＋EDFハイブリッドでのAlpha-1自由飛行。ATLA正式調達参画。宇宙港LOI。Korayフルタイム移行。チーム10〜15名に拡大。'],
-    'road4-h3':    ['Full-scale Platform (1,650 kg MTOW)','フルスケールプラットフォーム（1,650kg MTOW）'],
-    'road4-desc':  ['Full-scale vehicle with hydrogen-compatible propulsion upgrade. JCAB/MoD certification track. Defense procurement contracts. Commercial spaceport operations begin.','水素対応推進にアップグレードしたフルスケール機体。JCAB/防衛省認証トラック。防衛調達契約。商用宇宙港運用開始。'],
-    'road5-h3':    ['Al-B Solid Metal Propulsion Integration','Al-B固体金属推進統合'],
-    'road5-desc':  ['Friable rod propulsion replaces turbojet if theoretical energy density advantage is experimentally validated. Pathway to personal air mobility opens if economics hold.','理論的なエネルギー密度優位性が実験的に検証された場合、脆性ロッド推進がターボジェットを置き換える。経済性が成立すれば個人航空移動への道が開く。'],
-    // TRACTION
-    'tract-tag':   ['Proof Points','実証済みポイント'],
-    'tract-h2':    ['What exists today.','今日、存在するもの。'],
-    'tract-lead':  ['We distinguish between what is proven, what is in progress, and what is a design target. Every claim here is backed by data or formal submission.','実証済み・進行中・設計目標を明確に区別する。ここに記載するすべての主張はデータまたは正式提出により裏付けられている。'],
-    'tract1-h3':   ['CFD Analysis Complete','CFD解析完了'],
-    'tract1-desc': ['OpenFOAM v2406. Full four-configuration analysis. Cd=0.065, Cl=0.150, CL_α=1.934/rad, Cm_α=+0.415/rad. Static instability confirmed — NDI requirement proven.','OpenFOAM v2406。全4形態解析完了。Cd=0.065、Cl=0.150、CL_α=1.934/rad、Cm_α=+0.415/rad。静的不安定確認済み——NDI必要性実証。'],
-    'tract2-h3':   ['Japan MOD ATLA Submitted','防衛省ATLA提出済み'],
-    'tract2-desc': ['Formal submission to Japan Defense Acquisition, Technology and Logistics Agency. Under ministry review 2026.','防衛装備庁（ATLA）への正式提出完了。2026年省内審査中。'],
-    'tract3-h3':   ['Patent NTK-2026-PROP-005','特許NTK-2026-PROP-005'],
-    'tract3-desc': ['Friable rod solid metal composite propulsion. Tribological feed mechanism, dual-axis throttle, multi-mode operation. Patent application in preparation.','脆性ロッド固体金属複合燃料推進。摩擦脆性供給機構・2軸スロットル・マルチモード動作。特許出願準備中。'],
-    'tract4-h3':   ['NDI SIL Environment Running','NDI SIL環境稼働中'],
-    'tract4-desc': ['ArduPilot SITL + JSBSim simulation. Python NDI control law implemented. 3-mode operation (hover/fault/transition) running. HIL integration next.','ArduPilot SITL＋JSBSimシミュレーション。Python NDI制御則実装済み。3モード動作（ホバー/故障/遷移）稼働中。HIL統合が次ステップ。'],
-    'tract5-h3':   ['70 cm PoC Prototype — In Build','70cm PoCプロトタイプ——製作中'],
-    'tract5-desc': ['6× EDF components ordered. Matek flight controller selected. 3D design in progress. Physical demonstrations of NDI, GPS-denied landing, and fault recovery targeted August 2026.','EDF×6基発注済み。Matek飛行コントローラー選定済み。3D設計進行中。NDI・GPS非依存着陸・故障回復の物理実証を2026年8月に予定。'],
-    // ASK
-    'ask1-h3':     ['NEDO DTSU Round 10 Co-submission','NEDO DTSU第10回 共同申請'],
-    'ask1-desc':   ['DTSU requires a VC/CVC investment intention letter covering ≥1/3 of eligible costs. Subsidy up to ¥500M at 2/3 rate over 24 months. PoC prototype → TRL 5 is the deliverable.','DTSUはVC/CVCの出資意向確認書（補助対象費用の1/3以上）を必須とする。補助率2/3、最大¥500M、期間24ヶ月。PoCプロトタイプ→TRL5が成果物。'],
-    'ask2-h3':     ['Bridge Seed — ¥3–5M (SAFE / Convertible Note)','ブリッジシード ¥3〜5M（SAFE / 転換社債）'],
-    'ask2-desc':   ['DTSU subsidy is paid in arrears. A 6–9 month cash flow gap exists between adoption and first payment. Bridge capital enables prototype execution, patent filings, and operations during the grant period.','DTSU補助金は後払い。採択から初回入金まで6〜9ヶ月のキャッシュフローギャップが生じる。ブリッジ資金により補助事業期間中のプロトタイプ実行・特許出願・事業運営が可能になる。'],
-    // TEAM
-    'koray-h3':    ['Ucuncu Koray','Ucuncu Koray（ウジュンジュ コレイ）'],
-    'koray-role':  ['CEO & Co-Founder','CEO・共同創業者'],
-    'koray-bio':   ['MSc Materials & Energy Science, Science Tokyo (former Tokyo Tech). Global R&D Lead, Teraoka Seiko (current). 6+ years engineering & business development at DIGI/TERAOKA. 10+ years mechatronics, robotics, and AI. Leads EVO-T aerodynamic design, CFRP/Ti composite structures, CFD workflow, and IP strategy.','東京科学大学（旧東工大）材料・エネルギー科学修士。株式会社寺岡精工グローバルR&Dリード（現職）。DIGI/TERAOKAでのエンジニアリング・事業開発6年以上。メカトロニクス・ロボティクス・AI実装10年以上。EVO-T空力設計・CFRP/Ti複合材構造・CFDワークフロー・IP戦略を主導。'],
-    'gabriel-role':['CTO & Co-Founder','CTO・共同創業者'],
-    'gabriel-h3':  ['Gabriel Peixoto','Gabriel Peixoto（ペイショト ガブリエル）'],
-    'gabriel-bio': ['PhD candidate, Intelligent Systems, Osaka University. MSc Computer Science (CV & HCI). FPGA, DSP, GPU embedded systems specialist. 5 years AI robotics at Connected Robotics. Co-workers with Koray at Connected Robotics. Leads all real-time flight software: NDI control law, ArduPilot SIL/HIL, GPS-denied navigation, and Matek flight controller integration.','大阪大学知能システム博士課程。コンピュータサイエンス修士（CV・HCI）。FPGA・DSP・GPU組込みシステム専門家。Connected Roboticsでロボティクス5年（Korayとの共同勤務）。NDI制御則・ArduPilot SIL/HIL・GPS非依存航法・Matek統合など全リアルタイム飛行ソフトウェアを主導。'],
-    'cameron-role':['CGO & Co-Founder','CGO・共同創業者'],
-    'cameron-h3':  ['Cameron Clark','Cameron Clark（クラーク キャメロン）'],
-    'cameron-bio': ['BA Arts Management + Japanese Studies, Ohio State University. Study abroad at International Christian University, Tokyo. Knows both co-founders personally for 7+ years. Leads brand strategy, investor relations, and international growth. Bridges Japanese defense and spaceport markets with global investor and partner networks.','オハイオ州立大学 芸術経営＋日本語学士。国際基督教大学（東京）留学。両共同創業者と7年以上の個人的な関係。ブランド戦略・投資家関係・国際成長を主導。日本の防衛・宇宙港市場とグローバル投資家・パートナーネットワークを橋渡しする。'],
-    'team-recruit':['Actively recruiting: Aerospace Engineer (propulsion / certification) · Using seed funds for this hire.','採用中：航空宇宙エンジニア（推進・認証）· シード資金で採用予定。'],
-
-
+    "nav-gap": ["The Gap", "ギャップ"],
+    "nav-tech": ["Technology", "技術"],
+    "nav-market": ["Applications", "用途"],
+    "nav-roadmap": ["Roadmap", "ロードマップ"],
+    "nav-business": ["Business", "事業"],
+    "nav-ask": ["Funding", "資金"],
+    "nav-team": ["Team", "チーム"],
+    "hero-tag": ["EVO-T — Uncrewed High-Speed VTOL", "EVO-T — 無人・高速VTOL機"],
+    "hero-h1a": ["To where there is no road,", "道も、電波も、"],
+    "hero-h1b": ["no signal, no crew.", "人手もない場所へ。"],
+    "hero-sub": ["A blended-wing-body, jet-powered VTOL aircraft targeting about 600 km/h cruise with no runway and no dependence on GPS — engineered in Japan for emergency response and defence, where today's options fall short.", "翼胴一体型のジェット推進VTOL機。約600km/h巡航（目標）、滑走路不要、GPSに依存しない。今の手段では間に合わない、緊急対応と防衛のために日本で設計・開発。"],
+    "gap-tag": ["The Problem", "課題"],
+    "gap-h2": ["Aviation's 70-year<br>empty quadrant", "航空の70年間の<br>空白領域"],
+    "gap-lead": ["No aircraft today can take off vertically from an unprepared surface, cruise at jet speeds, and navigate autonomously without GPS.", "未整備の地点から垂直に離陸し、ジェット速度で巡航し、GPSなしで自律航行できる航空機は、今日存在しない。"],
+    "tech-tag": ["Core Technology", "コア技術"],
+    "tech-h2": ["Three technologies.<br>One integrated moat.", "3つの技術。<br>1つの統合された強み。"],
+    "tech-body": ["Each technology is co-designed with the others. The control software is tuned to this specific airframe, and the navigation system feeds the same state estimator that underpins it. Neither works at full capability without the other.", "各技術は相互に共同設計されている。制御ソフトウェアはこの機体に合わせて調整され、航法システムは同じ状態推定器に入力される。どれか一つだけでは完全な能力を発揮できない。"],
+    "ndi-h3": ["Transition Control", "遷移制御"],
+    "ndi-desc": ["Flight control software that manages the handover from fan-borne to jet-borne flight on a statically unstable blended wing body. The static instability confirmed by CFD is the core engineering challenge.", "静的不安定な翼胴一体型機体で、ファン飛行からジェット飛行への切り替えを管理する飛行制御ソフトウェア。CFDで確認された静的不安定性が、中核の技術課題。"],
+    "nav-h3": ["GPS-Denied Navigation", "GPS非依存航法"],
+    "nav-desc": ["Three-layer sensor fusion via Extended Kalman Filter. Natural surface feature signatures + semantic landmark detection + laser depth array. Zero pre-installed infrastructure required.", "拡張カルマンフィルタによる3層センサーフュージョン。自然地物の特徴＋意味的ランドマーク認識＋レーザー深度アレイ。事前のインフラ設置は不要。"],
+    "prop-h3": ["Propulsion Architecture", "推進アーキテクチャ"],
+    "prop-phase1-desc": ["PBS-class microturbojets provide cruise thrust on the full-scale aircraft, and six electric ducted fans provide vertical lift. Off-the-shelf engine class, with no new engine development.", "フルスケール機の巡航推力にはPBSクラスのマイクロターボジェット、垂直揚力には6基の電動ダクトファンを使用。既製のエンジンクラスを採用し、エンジンの新規開発は行わない。"],
+    "moat-tag": ["Competitive Moat", "競争優位"],
+    "moat-h2": ["Copy one piece.<br>Get nothing.", "1つをコピーしても<br>意味がない。"],
+    "moat-lead": ["The three technologies are co-designed. No single component functions at full capability without the other two. The integration is the invention.", "3つの技術は共同設計されている。どれか1つを単独でコピーしても、他の2つなしでは完全な機能を発揮しない。統合こそが発明である。"],
+    "moat1-h3": ["Copy the BWB airframe", "BWB機体形状をコピーする"],
+    "moat1-desc": ["Without control software tuned to this airframe's instability, the aircraft is aerodynamically uncontrollable.", "この機体の不安定性に合わせた制御ソフトウェアなしでは、機体は空力的に制御不能になる。"],
+    "moat1-v": ["Result → unflyable", "結果 → 飛行不能"],
+    "moat2-h3": ["Copy the control software", "制御ソフトウェアをコピーする"],
+    "moat2-desc": ["Tuned to specific aerodynamic coefficients validated by OpenFOAM CFD on EVO-T's geometry. No transferability to another airframe without repeating the full design loop.", "EVO-T形状のOpenFOAM CFDで検証された空力係数に合わせて調整済み。設計ループを一からやり直さない限り、別の機体には転用できない。"],
+    "moat2-v": ["Result → non-functional", "結果 → 機能不全"],
+    "moat3-h3": ["Build GPS-denied navigation", "GPS非依存航法を単独で開発する"],
+    "moat3-desc": ["Without integration as a position measurement in the flight controller's state estimator, it remains an instrument display — not a flight control input.", "飛行制御の状態推定器に位置計測として統合されなければ、計器表示に留まる。飛行制御の入力にはならない。"],
+    "moat3-v": ["Result → fragmented", "結果 → 断片的"],
+    "moat5-h3": ["Integrate all three from scratch", "3技術すべてをゼロから統合する"],
+    "moat5-desc": ["Requires the same iterative loop of CFD aerodynamic modelling → control design → sensor fusion → hardware-in-the-loop testing that Tokyo Dynamics has been executing since 2021. The aerodynamic model, control software and sensor fusion cannot be purchased or downloaded.", "2021年から続けているCFD空力モデリング→制御設計→センサーフュージョン→ハードウェア・イン・ザ・ループ検証の反復が必要。空力モデル、制御ソフトウェア、センサーフュージョンは、購入もダウンロードもできない。"],
+    "market-tag": ["Applications", "用途"],
+    "market-h2": ["Three applications.<br>One aircraft.", "3つの用途。<br>1つの機体。"],
+    "market-lead": ["Emergency response comes first, then defence, with civil logistics and medical later, once flight records support certification. Defence scope is transport, reconnaissance and ground-robot deployment — no weapons.", "まず緊急対応、次に防衛。民間物流・医療は、飛行実績が認証に活用できる段階で展開する。防衛の範囲は輸送・偵察・地上ロボットの展開に限り、武器は搭載しない。"],
+    "mk1-tag": ["First · Emergency Response", "第1 ・ 緊急対応"],
+    "market1-h3": ["Disaster relief, rescue, medical supply", "災害対応・救助・医療物資"],
+    "market1-desc": ["When roads are cut and sea and air routes are limited by weather and terrain, as in the 2024 Noto earthquake. Expected customers: SDF (disaster relief), municipalities, fire services, police, Coast Guard.", "2024年の能登半島地震のように、道路が寸断され、海と空の輸送も天候・地形の制約を受ける場面。想定顧客：自衛隊（災害派遣）・自治体・消防・警察・海上保安庁。"],
+    "mkt1-size-lbl": ["Priority order", "優先順位"],
+    "mk2-tag": ["Second · Defence", "第2 ・ 防衛"],
+    "market2-h3": ["Transport, reconnaissance, robot deployment", "輸送・偵察・ロボット展開"],
+    "market2-desc": ["Low-altitude, high-speed, GPS-independent flight, starting with island logistics support. Japan's Self-Defense Forces met only 51% of their FY2023 recruitment plan, a record low.", "低空・高速・GPS非依存の飛行が最も生きる任務。離島の後方支援から。自衛官の採用は2023年度に計画の51%で、過去最低。"],
+    "mkt2-size-lbl": ["Priority order", "優先順位"],
+    "mk3-tag": ["Later · Civil", "将来 ・ 民間"],
+    "market3-h3": ["Civil logistics and medical", "民間物流・医療"],
+    "market3-desc": ["Time-critical medical supply and remote delivery, once flight records support civil certification.", "実運用の記録をもとに民間の認証を取得したうえで、緊急性の高い医療物資や遠隔地への輸送へ展開する。"],
+    "mkt3-size-lbl": ["Priority order", "優先順位"],
+    "road-tag": ["Roadmap", "ロードマップ"],
+    "road-h2": ["Staged execution.<br>Each phase funded before the next.", "段階的な実行。<br>各フェーズは、前の成果と資金の上に。"],
+    "road-lead": ["Each phase is unlocked by the results, and the funding, of the one before it.", "各フェーズは、前のフェーズの成果と資金調達によって開かれる。"],
+    "road1-h3": ["Foundation — Self-funded", "基盤構築 — 自己資金"],
+    "road1-desc": ["Blended wing body concept design. OpenFOAM CFD complete across configurations. Flight-control simulation running. ATLA proposal submitted. Company established.", "翼胴一体型の概念設計。OpenFOAM CFDを全形態で完了。飛行制御シミュレーション稼働中。防衛装備庁（ATLA）へ提案書を提出。会社設立済み。"],
+    "road2-h3": ["50 cm Prototype — Test Campaign", "50cm試験機 — 試験キャンペーン"],
+    "road2-desc": ["4-fan bench fire test complete. 3D-printed 50 cm aircraft in build, fans going to six. Takeoff and landing tests from October; GPS-denied flight and fault-recovery tests from November.", "4基ファンのベンチ燃焼試験を完了。3Dプリントの50cm試験機を製作中で、ファンを6基に増設予定。離着陸試験は10月から、GPSなし飛行と故障復帰の試験は11月から。"],
+    "road3-h3": ["Jet Engines, Larger Aircraft, Test Fields", "ジェットエンジン・大型試験機・試験場"],
+    "road3-desc": ["Procure PBS-class jet engines. Build a larger test aircraft to measure cruise thrust, low-altitude high-speed flight and real payload. Secure test fields and the permissions to use them.", "PBSクラスのジェットエンジンを調達。大型試験機で、巡航推力・低空高速飛行・実ペイロードを実測する。試験場と、その使用に必要な許可を確保する。"],
+    "road4-h3": ["Full-Scale Prototype Tests", "実寸大試作機の試験"],
+    "road4-desc": ["Full-scale prototype tests begin in Q1 2028. Targets: about 600 km/h cruise, 500 km or more, payload of hundreds of kg. Certification groundwork with government and defence customers first.", "実寸大試作機の試験を2028年第1四半期から開始。目標：約600km/h巡航、航続500km以上、数百kg級のペイロード。国・防衛の顧客と先に認証の基盤を整える。"],
+    "road5-h3": ["Service Operations", "サービス運用"],
+    "road5-desc": ["Tokyo Dynamics owns and operates the fleet under 5–10 year service contracts: emergency response and defence first, civil logistics and medical later. Aircraft are taken back and recycled at end of life.", "当社が機体を保有・運用し、5〜10年のサービス契約で提供。緊急対応と防衛から、民間物流・医療は後に。契約終了後は機体を回収し、再資源化する。"],
+    "tract-tag": ["Proof Points", "実績"],
+    "tract-h2": ["What exists today.", "今、存在するもの。"],
+    "tract-lead": ["We distinguish between what is proven, what is in progress, and what is a design target. Every claim here is backed by data or a formal submission.", "実証済み・進行中・設計目標を明確に区別する。ここに記載するすべての主張は、データまたは正式な提出に裏付けられている。"],
+    "tract1-h3": ["CFD Analysis Complete", "CFD解析完了"],
+    "tract1-desc": ["OpenFOAM v2406 analysis of the sealed cruise configuration. Static pitch instability confirmed, which validates the need for active control. Further runs are planned.", "OpenFOAM v2406で、ダクトを閉じた巡航形態を解析。静的な縦不安定を確認し、能動的な制御の必要性を裏付けた。追加の解析を計画中。"],
+    "tract2-h3": ["Japan MOD ATLA Proposal Submitted", "防衛装備庁（ATLA）へ提案書を提出"],
+    "tract2-desc": ["Formal proposal submitted to the Acquisition, Technology & Logistics Agency.", "防衛装備庁（ATLA）へ、正式に提案書を提出済み。"],
+    "tract3-h3": ["4-Fan Bench Fire Test Complete", "4基ファンのベンチ燃焼試験を完了"],
+    "tract3-desc": ["Four electric ducted fans run together on our own control software. All units normal.", "4基の電動ダクトファンを、独自の制御ソフトウェアで連動して動作。全基が正常。"],
+    "tract4-h3": ["Flight Control Simulation Running", "飛行制御シミュレーション稼働中"],
+    "tract4-desc": ["ArduPilot SITL + JSBSim simulation. Python control law implemented. Hover, fault and transition modes running in simulation. Hardware integration next.", "ArduPilot SITL＋JSBSimシミュレーション。Pythonで制御則を実装。ホバー・故障・遷移の3モードがシミュレーション上で稼働。次はハードウェア統合。"],
+    "tract5-h3": ["50 cm Test Aircraft — In Build", "50cm試験機 — 製作中"],
+    "tract5-desc": ["3D-printed airframe in build; fans going from four to six (motors on order). Takeoff and landing tests from October, GPS-denied flight and fault-recovery tests from November.", "3Dプリントの機体を製作中。ファンを4基から6基へ増設（モーター到着待ち）。離着陸試験は10月から、GPSなし飛行と故障復帰の試験は11月から。"],
+    "biz-tag": ["Business Model", "ビジネスモデル"],
+    "biz-h2": ["Customers buy capability,<br>not aircraft.", "顧客が契約するのは、<br>機体ではなく「任務能力」。"],
+    "biz-lead": ["We own and operate the fleet. Customers sign long-term service contracts and get the mission capability, without carrying maintenance, approvals or disposal.", "機体は当社が保有・運用する。顧客は長期のサービス契約で任務能力を得られ、整備・許認可・廃棄の負担を負わない。"],
+    "biz-c1-t": ["Own & Operate", "保有・運用"],
+    "biz-c1-h": ["We own the fleet", "機体は当社が保有"],
+    "biz-c1-d": ["Tokyo Dynamics owns the aircraft and handles operations, maintenance and approvals.", "運用・保守・許認可まで当社が担当する。"],
+    "biz-c2-t": ["Long-Term Service", "長期サービス契約"],
+    "biz-c2-h": ["5–10 year contracts", "5〜10年の契約"],
+    "biz-c2-d": ["Readiness in normal times and rapid deployment in emergencies, under one service contract.", "平時の備えと、緊急時の出動に必要な能力を、1つの契約で確保する。"],
+    "biz-c3-t": ["Take-Back & Recycling", "回収・再資源化"],
+    "biz-c3-h": ["End-of-life handled by us", "契約終了後も当社が対応"],
+    "biz-c3-d": ["We take the aircraft back and build material reuse into the business. End-of-life cost is priced in.", "機体を回収し、素材の再利用を事業に組み込む。廃棄の費用も、あらかじめ価格に含める。"],
+    "biz-band": ["Customers don't carry maintenance, approvals or disposal.", "顧客は、整備体制・許認可・廃棄の心配をしなくてよい。"],
+    "biz-direct": ["Direct sales may be offered later, once flight records are built, where a customer prefers to own.", "将来は、実績を積んだうえで、機体の直接販売・納入も選択肢とする。"],
+    "biz-disc": ["Pricing and contract terms will be set with early customers.", "価格・契約条件は、初期の顧客と協議のうえで決定する。"],
+    "bn-h": ["Planning estimates: what a mission costs", "試算：1ミッションあたりの運用コスト"],
+    "bn-s1v": ["¥200–580k", "20万〜58万円"],
+    "bn-s1l": ["per flight hour (about $1,400–3,900)", "飛行1時間あたり（約1,400〜3,900ドル）"],
+    "bn-s2v": ["¥170–490k", "17万〜49万円"],
+    "bn-s2l": ["per 500 km mission, about 50 min", "500km・約50分のミッションあたり"],
+    "bn-s3v": ["¥570–1,600", "570〜1,600円"],
+    "bn-s3l": ["per kg delivered, full payload over 500 km (about $4–11)", "1kgあたり（満載・500km。約4〜11ドル）"],
+    "bn-s4v": ["¥1,100–3,200", "1,100〜3,200円"],
+    "bn-s4l": ["per kg at half payload", "1kgあたり（積載率50%の場合）"],
+    "bn-drv": ["Biggest cost drivers: engine overhaul reserve (about 40%), fuel (about 15%), operations team (about 13%), aircraft depreciation (about 10%), maintenance (about 17%); insurance and recycling make up the rest.", "主なコスト要因：エンジン整備積立（約40%）、燃料（約15%）、運用チーム（約13%）、機体償却（約10%）、整備（約17%）。残りは保険・再資源化。"],
+    "bn-as": ["Assumptions: 300 kg payload; 500 km at about 600 km/h; aircraft cost ¥80–150M, written off over 10 years; 250–500 flight hours per year; jet fuel ¥160/kg; engine overhaul every 100–200 hours; no onboard crew; end-of-life take-back included; ¥150 = $1. The low and high figures correspond to the best and worst case of these assumptions.", "前提：ペイロード300kg、500kmを約600km/hで飛行、機体価格8,000万〜1.5億円を10年で償却、年間飛行250〜500時間、ジェット燃料160円/kg、エンジン整備は100〜200時間ごと、機上乗員なし、契約終了後の回収を含む、1ドル=150円。幅は、これらの前提が最良の場合と最悪の場合に対応する。"],
+    "bn-disc": ["These are planning estimates from our own assumptions, not quotations. We will replace them with measured figures from flight tests.", "これらは当社の前提にもとづく試算であり、見積りではありません。飛行試験の実測値が得られ次第、置き換えます。"],
+    "ask-tag": ["Investment Opportunity", "投資機会"],
+    "ask-h2": ["Funding that takes us<br>from tests to full scale.", "資金で、試験機から<br>実寸大の機体へ。"],
+    "ask-lead": ["Whether it comes as a grant, venture investment or a government programme, the funding serves one purpose: taking EVO-T from the 50 cm test aircraft to a full-scale prototype. The same plan supports all three applications — emergency response, defence and civil logistics.", "助成金・ベンチャー投資・公的プログラムのいずれであっても、資金の目的は同じ。EVO-Tを50cm試験機から実寸大の試作機へ進めること。この計画は、緊急対応・防衛・民間物流の3つの用途すべてを支える。"],
+    "ask1-h3": ["What funding enables", "資金で可能になること"],
+    "ask1-desc": ["Moving from proof on a 50 cm aircraft to flight with real engines and real payload.", "50cm試験機での実証から、実エンジン・実ペイロードでの飛行へ進む。"],
+    "ask-l1": ["Buy the jet engines", "ジェットエンジンを調達する"],
+    "ask-l2": ["Build a full-scale prototype, with full-scale tests from Q1 2028", "実寸大の試作機を製作し、2028年第1四半期から試験を開始する"],
+    "ask-l3": ["Secure test fields and the permissions to use them", "試験場と、その使用に必要な許可を確保する"],
+    "ask-l4": ["Strengthen the development and test team", "開発・試験体制を強化する"],
+    "ask2-h3": ["How we work with partners", "資金提供者との進め方"],
+    "ask2-desc": ["A staged plan in which every phase is reported with measured results.", "各フェーズの成果を、測定した数値で報告する段階的な計画。"],
+    "ask-l5": ["Each phase funded before the next", "各フェーズは、次の前に資金を確保する"],
+    "ask-l6": ["Results shown with measured data, video and logs", "結果は、数値・動画・ログで提示する"],
+    "ask-l7": ["Target raise, valuation and terms: shared per application", "希望調達額・評価額・条件：案件ごとにご提示する"],
+    "team-tag": ["Team", "チーム"],
+    "team-h2": ["Built in Tokyo.<br>Shipped together.", "東京発。<br>共に積み上げてきた。"],
+    "team-lead": ["Three co-founders combining aerospace engineering, embedded AI systems and global market development. Seven years of shared working history.", "航空宇宙エンジニアリング・組込みAIシステム・グローバル市場開発を組み合わせる3人の共同創業者。7年にわたる共同業務の経験。"],
+    "koray-role": ["CEO & Co-Founder", "CEO・共同創業者"],
+    "koray-h3": ["Ucuncu Koray", "Ucuncu Koray（ウジュンジュ コレイ）"],
+    "koray-bio": ["MSc Materials & Energy Science, Science Tokyo. 6+ years in engineering and business development at DIGI/TERAOKA (mechatronics, robotics, aerospace). Leads vision, aerodynamic design, composite structures, CFD workflow and fundraising.", "東京科学大学 材料・エネルギー科学修士。DIGI/TERAOKAで6年以上、エンジニアリングと事業開発（メカトロニクス・ロボティクス・航空宇宙）。ビジョン、空力設計、複合材構造、CFDワークフロー、資金調達を統括。"],
+    "gabriel-role": ["CTO & Co-Founder", "CTO・共同創業者"],
+    "gabriel-h3": ["Gabriel Peixoto", "Gabriel Peixoto（ペイショト ガブリエル）"],
+    "gabriel-bio": ["PhD candidate, Intelligent Systems, Osaka University; MSc Computer Science (CV & HCI). 5 years as Lead Robotics AI Engineer at Connected Robotics (FPGA, DSP, GPU embedded systems). Leads system architecture, real-time flight software, GPS-denied navigation and safety.", "大阪大学 知能システム 博士課程在籍。コンピュータサイエンス修士（CV・HCI）。Connected RoboticsでロボットAIのリードエンジニアを5年（FPGA・DSP・GPU組込みシステム）。システム設計、リアルタイム飛行ソフトウェア、GPS非依存航法、安全性を統括。"],
+    "cameron-role": ["CGO & Co-Founder", "CGO・共同創業者"],
+    "cameron-h3": ["Cameron Clark", "Cameron Clark（クラーク キャメロン）"],
+    "cameron-bio": ["BA Arts Management & Japanese Studies, Ohio State University / International Christian University. 7+ years in international growth, strategy and cross-border business development. Leads commercialization, investor relations and go-to-market.", "オハイオ州立大学／国際基督教大学 芸術経営・日本研究 学士。国際的な事業成長・経営戦略・クロスボーダー事業開発で7年以上。事業化、投資家対応、市場展開を統括。"],
+    "team-recruit": ["Actively recruiting: Aerospace Engineer (propulsion / certification) · Using seed funds for this hire.", "採用中：航空宇宙エンジニア（推進・認証）· シード資金で採用予定。"],
+    "hero-a1": ["Emergency response", "緊急対応"],
+    "hero-a2": ["Defence", "防衛"],
+    "hero-a3": ["Civil", "民間"],
+    "hs1": ["Cruise speed target", "巡航速度（目標）"],
+    "hs2": ["Range target", "航続距離（目標）"],
+    "hs3": ["Runway required", "必要な滑走路"],
+    "hs4": ["Test aircraft in build", "製作中の試験機"],
+    "hero-ph": ["Hero image: EVO-T", "ヒーロー画像：EVO-T"]
   };
 
   var btn = document.getElementById('lang-btn');
