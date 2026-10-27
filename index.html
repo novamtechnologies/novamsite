@@ -249,14 +249,15 @@
   .hero-stats { margin-bottom:24px; gap:28px; }
   .hero-disclaimer { margin-bottom:0; }
   @media (max-width:900px){ .hero-split{grid-template-columns:1fr; gap:32px;} .hero-media{aspect-ratio:16/10;} #hero{padding:90px 20px 48px;} .gap-table{display:block;overflow-x:auto;} }
-  .tech-visuals { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin: 40px 0 2px; }
-  .vis { margin: 0; border: 1px solid var(--border); background: var(--deep); display: flex; flex-direction: column; }
-  .vis-frame { position: relative; display: flex; align-items: center; justify-content: center; aspect-ratio: 4/3; overflow: hidden; }
-  .vis-ph { position: absolute; font-family: var(--mono); font-size: 11px; color: var(--muted); letter-spacing: 0.14em; text-transform: uppercase; }
-  .vis-frame img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; background: var(--deep); }
-  .vis-frame img.cover { object-fit: cover; }
-  .vis figcaption { font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; color: var(--muted); padding: 12px 16px; border-top: 1px solid var(--border); }
-  @media (max-width: 900px) { .tech-visuals { grid-template-columns: 1fr; } }
+  .fi { margin: 0; border: 1px solid var(--border); background: var(--deep); }
+  .fi-sec { max-width: 1280px; margin: 0 auto; }
+  #technology .fi { margin-top: 40px; }
+  .fi-frame { position: relative; display: flex; align-items: center; justify-content: center; min-height: 360px; }
+  .fi-ph { position: absolute; font-family: var(--mono); font-size: 11px; color: var(--muted); letter-spacing: 0.14em; text-transform: uppercase; }
+  .fi-frame img { position: relative; display: block; width: 100%; height: auto; background: var(--deep); }
+  .fi figcaption { font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; color: var(--muted); padding: 12px 16px; border-top: 1px solid var(--border); }
+  .hero-split { grid-template-columns: 1fr !important; }
+  @media (max-width: 900px) { .fi-frame { min-height: 200px; } }
 </style>
 </head>
 <body>
@@ -288,12 +289,17 @@
       <div class="hero-stats fade-up d3"><div class="stat"><div class="stat-val">600<span> km/h</span></div><div class="stat-label" data-lang-key="hs1">Cruise speed target</div><div class="stat-proof"><span class="badge badge-target">◎ Design Target</span></div></div><div class="stat"><div class="stat-val">500+<span> km</span></div><div class="stat-label" data-lang-key="hs2">Range target</div><div class="stat-proof"><span class="badge badge-target">◎ Design Target</span></div></div><div class="stat"><div class="stat-val">0<span> m</span></div><div class="stat-label" data-lang-key="hs3">Runway required</div><div class="stat-proof"><span class="badge badge-target">◎ Design Target</span></div></div><div class="stat"><div class="stat-val">50<span> cm</span></div><div class="stat-label" data-lang-key="hs4">Test aircraft in build</div><div class="stat-proof"><span class="badge badge-target">◎ Building now</span></div></div></div>
       <p class="hero-disclaimer fade-up d3">★ = Completed &nbsp;|&nbsp; ◎ = Design target / in progress &nbsp;|&nbsp; ○ = Planned (funding-dependent)</p>
     </div>
-    <div class="hero-media fade-up d2">
-      <div class="hero-ph" data-lang-key="hero-ph">Hero image: EVO-T</div>
-      <img src="evot-hero.jpg" alt="EVO-T" onerror="this.style.display='none'">
-    </div>
   </div>
 </div>
+
+<section class="fi-sec" style="padding-top:0;padding-bottom:56px;">
+  <figure class="fi" id="img-hero">
+    <div class="fi-frame">
+      <div class="fi-ph" data-lang-key="hero-ph">Hero image: EVO-T</div>
+      <img src="evot-hero.jpg" alt="EVO-T" onerror="this.style.display='none'">
+    </div>
+  </figure>
+</section>
 
 <div class="divider"></div>
 
@@ -367,22 +373,13 @@
   <h2 data-lang-key="tech-h2">Three technologies.<br>One integrated moat.</h2>
   <p data-lang-key="tech-body" class="section-lead">Each technology is co-designed with the others. The control software is tuned to this specific airframe, and the navigation system feeds the same state estimator that underpins it. Neither works at full capability without the other.</p>
 
-  <div class="tech-visuals">
-    <figure class="vis">
-      <div class="vis-frame">
-        <div class="vis-ph" data-lang-key="st-ph">Studio image: EVO-T</div>
-        <img class="cover" src="evot-studio.jpg" alt="EVO-T studio view" onerror="this.style.display='none'">
-      </div>
-      <figcaption data-lang-key="st-cap">EVO-T studio view.</figcaption>
-    </figure>
-    <figure class="vis">
-      <a href="evot-blueprint.jpg" target="_blank" rel="noopener" class="vis-frame">
-        <div class="vis-ph" data-lang-key="bp-ph">Blueprint image: EVO-T</div>
-        <img src="evot-blueprint.jpg" alt="EVO-T concept drawing" onerror="this.style.display='none'">
-      </a>
-      <figcaption data-lang-key="bp-cap">EVO-T concept drawing. Configuration and dimensions are subject to change as testing progresses.</figcaption>
-    </figure>
-  </div>
+  <figure class="fi" id="img-blueprint">
+    <a href="evot-blueprint.jpg" target="_blank" rel="noopener" class="fi-frame">
+      <div class="fi-ph" data-lang-key="bp-ph">Blueprint image: EVO-T</div>
+      <img src="evot-blueprint.jpg" alt="EVO-T concept drawing" onerror="this.style.display='none'">
+    </a>
+    <figcaption data-lang-key="bp-cap">EVO-T concept drawing. Configuration and dimensions are subject to change as testing progresses.</figcaption>
+  </figure>
 
   <div class="tech-grid">
     <div class="tech-card">
@@ -449,6 +446,19 @@
       <p data-lang-key="moat5-desc">Requires the same iterative loop of CFD aerodynamic modelling → control design → sensor fusion → hardware-in-the-loop testing that Tokyo Dynamics has been executing since 2021. The aerodynamic model, control software and sensor fusion cannot be purchased or downloaded.</p>
     </div>
   </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- STUDIO -->
+<section class="fi-sec" style="padding-top:56px;padding-bottom:56px;">
+  <figure class="fi" id="img-studio">
+    <div class="fi-frame">
+      <div class="fi-ph" data-lang-key="st-ph">Studio image: EVO-T</div>
+      <img src="evot-studio.jpg" alt="EVO-T studio view" onerror="this.style.display='none'">
+    </div>
+    <figcaption data-lang-key="st-cap">EVO-T studio view.</figcaption>
+  </figure>
 </section>
 
 <div class="divider"></div>
